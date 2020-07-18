@@ -21,7 +21,7 @@ class Predict extends React.Component {
             error: null,
             claim: ((props.location.state || {}).claim || defaultClaim),
             isValidatedClaim: ((props.location.state || {}).isValidatedClaim || false),
-            claimIndexResult: ((props.location.state || {}).isValidatedClaim || {}),
+            claimIndexResult: ((props.location.state || {}).claimIndexResult || {}),
             pills: "1"
         };
         this.handleChangeValue = this.handleChangeValue.bind(this);

@@ -117,11 +117,11 @@ class SimilarClaims extends React.Component {
                                     </CardText>
                                     {item.label.includes('false') ? (
                                         <CardText>
-                                            <b>Rating</b> : <Badge variant="danger">{item.label.charAt(0).toUpperCase() + item.label.slice(1)}</Badge>
+                                            <b>Rating</b> : <Badge color="danger">{item.label.charAt(0).toUpperCase() + item.label.slice(1)}</Badge>
                                         </CardText>
                                     ) : (
                                         <CardText>
-                                            <b>Rating</b> : <Badge variant="success">{item.label.charAt(0).toUpperCase() + item.label.slice(1)}</Badge>
+                                            <b>Rating</b> : <Badge color="success">{item.label.charAt(0).toUpperCase() + item.label.slice(1)}</Badge>
                                         </CardText>
                                     )}
                                     {/* <Card.Text>
