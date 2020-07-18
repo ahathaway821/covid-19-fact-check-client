@@ -89,7 +89,7 @@ class Predict extends React.Component {
                             <Button 
                                 variant="secondary" 
                                 onClick={this.handlePredict}>
-                                Predict
+                                Evaluate
                             </Button>
                         </Col>
                     </Row>

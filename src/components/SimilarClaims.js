@@ -91,7 +91,7 @@ class SimilarClaims extends React.Component {
                                             {item.claim}
                                         </ShowMoreText>
                                     </CardTitle>
-                                    <b>Explanation</b> : 
+                                    <h4>Explanation</h4> : 
                                     <ShowMoreText
                                         lines={3}
                                         more='Show more'
