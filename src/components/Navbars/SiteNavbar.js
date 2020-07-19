@@ -15,7 +15,7 @@ function SiteNavbar() {
         <Container className="justify-content-end">
             <Nav navbar >
               <NavItem>
-                <NavLink to="/home" tag={Link}>
+                <NavLink to="/" tag={Link}>
                   <p className="text-muted">
                     Home
                   </p>
