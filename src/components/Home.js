@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { Row, Col, Image, Button } from "reactstrap";
+import ShowMoreText from 'react-show-more-text';
 
 import ClaimSearch from "./ClaimSearch";
 import PopularClaims from "./PopularClaims";
@@ -90,6 +91,23 @@ class Home extends React.Component {
                 </div>
                 <br />
                 <PopularClaims />
+                <br />
+                <div style={{ textAlign: 'left'}}>
+                    <blockquote className="blockquote">
+                        <i className="now-ui-icons ui-1_bell-53"></i>
+                        <b>  Disclaimer</b>
+                        <ShowMoreText
+                            lines={3}
+                            more='Show more'
+                            less='Show less'
+                            anchorClass=''
+                            onClick={this.executeOnClick}
+                            expanded={false}
+                        >
+                            The information contained herein should NOT be used as a substitute for the advice of an appropriately qualified and licensed physician or other health care provider. The tool is not a substitute for the care provided by licensed healthcare practitioners and consumers are urged to consult with their healthcare practitioner in all instances. Although we attempt to provide accurate and up-to-date information, no guarantee is made to that effect. This tool does not endorse any medications, diagnose patients, or recommend therapy. 
+                        </ShowMoreText>
+                    </blockquote>
+                </div>
             </div>
         );
     }
