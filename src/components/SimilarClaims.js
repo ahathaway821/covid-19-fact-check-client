@@ -80,6 +80,7 @@ class SimilarClaims extends React.Component {
                             <Card>
                                 <CardBody>
                                     <CardTitle>
+                                    <h4>Claim</h4>
                                         <ShowMoreText
                                             lines={3}
                                             more='Show more'
@@ -91,7 +92,7 @@ class SimilarClaims extends React.Component {
                                             {item.claim}
                                         </ShowMoreText>
                                     </CardTitle>
-                                    <h4>Explanation</h4> : 
+                                    <h4>Explanation</h4>
                                     <ShowMoreText
                                         lines={3}
                                         more='Show more'
