@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import { Row, Col, InputGroup, InputGroupAddon, InputGroupText, Input, Button } from "reactstrap";
@@ -11,6 +11,11 @@ import DefaultFooter from "components/Footers/DefaultFooter.js";
 function Contact() {
     const [firstFocus, setFirstFocus] = React.useState(false);
     const [lastFocus, setLastFocus] = React.useState(false);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <>
         <LandingNavbar></LandingNavbar>

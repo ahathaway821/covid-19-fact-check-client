@@ -102,7 +102,7 @@ class PopularClaims extends React.Component {
     render() {
         return (
             <div style={{ textAlign: 'left'}}>
-                <p><strong>Try out these claims!</strong></p>
+                <p><span style={{fontWeight: "bold"}}>Try out these claims!</span></p>
                 <ListGroup flush>
                     <ListGroupItem action onClick={(e) => this.handleClick(1, e)}>Face masks can be steamed for reuse.</ListGroupItem>
                     <ListGroupItem action onClick={(e) => this.handleClick(2, e)}>5G mobile networks do not spread COVID-19</ListGroupItem>

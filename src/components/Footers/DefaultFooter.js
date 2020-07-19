@@ -12,9 +12,9 @@ function DefaultFooter() {
       <footer className="footer footer-default">
         <Container>
           <div className="copyright" id="copyright">
-            © {new Date().getFullYear()} All Rights Reserved
+            © {new Date().getFullYear()} CovidFact All Rights Reserved.
 
-            .
+            
           </div>
         </Container>
       </footer>

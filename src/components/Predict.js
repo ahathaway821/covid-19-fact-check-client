@@ -31,6 +31,10 @@ class Predict extends React.Component {
         this.predictButton = React.createRef();
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     setPills(pillNumber) {
         this.setState({pills: pillNumber})
     }

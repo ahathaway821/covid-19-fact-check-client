@@ -9,6 +9,10 @@ import DefaultFooter from "components/Footers/DefaultFooter.js";
 // import logo from "../img/covidImage.jpg";
 
 class About extends React.Component {
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+    
     render() {
         return (
             <>
