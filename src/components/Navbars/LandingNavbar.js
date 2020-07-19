@@ -16,14 +16,14 @@ function LandingNavbar() {
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
-        document.documentElement.scrollTop > 399 ||
-        document.body.scrollTop > 399
+        document.documentElement.scrollTop > 499 ||
+        document.body.scrollTop > 499
       ) {
         setNavbarColor("");
         setTextColor("text-muted");
       } else if (
-        document.documentElement.scrollTop < 400 ||
-        document.body.scrollTop < 400
+        document.documentElement.scrollTop < 499 ||
+        document.body.scrollTop < 499
       ) {
         setNavbarColor("navbar-transparent");
         setTextColor("");
