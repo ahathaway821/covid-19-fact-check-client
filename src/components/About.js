@@ -12,7 +12,7 @@ class About extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
     }
-    
+
     render() {
         return (
             <>
@@ -140,7 +140,7 @@ class About extends React.Component {
                                                 <img
                                                 alt="..."
                                                 className="rounded-circle img-fluid img-raised"
-                                                src={require("assets/img/team/sartaj4.jpg")}
+                                                src={require("assets/img/team/sartaj.jpg")}
                                                 ></img>
                                                 <h4 className="title">Sartaj Baveja</h4>
                                                 <p className="category text-info">Software Engineer</p>
@@ -160,13 +160,6 @@ class About extends React.Component {
                                                 href="https://www.linkedin.com/in/sartajsinghbaveja/"
                                                 >
                                                 <i className="fab fa-linkedin"></i>
-                                                </Button>
-                                                <Button
-                                                className="btn-icon btn-round"
-                                                color="info"
-                                                href="http://www.twitter.com/Sartaj1004"
-                                                >
-                                                <i className="fab fa-twitter"></i>
                                                 </Button>
                                             </div>
                                         </Col>

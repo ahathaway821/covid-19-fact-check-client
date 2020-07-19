@@ -82,6 +82,13 @@ function LandingNavbar() {
                 </NavLink>
               </NavItem>
               <NavItem>
+                <NavLink to="/model" tag={Link}>
+                  <p className={textColor}>
+                    Our Model
+                  </p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink to="/contact" tag={Link}>
                   <p className={textColor}>
                     Contact Us

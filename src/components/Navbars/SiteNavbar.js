@@ -29,6 +29,13 @@ function SiteNavbar() {
                 </NavLink>
               </NavItem>
               <NavItem>
+                <NavLink to="/model" tag={Link}>
+                  <p className="text-muted">
+                    Our Model
+                  </p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink to="/contact" tag={Link}>
                   <p className="text-muted">
                     Contact Us
