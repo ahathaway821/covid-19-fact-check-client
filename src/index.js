@@ -34,35 +34,48 @@ import About from "components/About.js";
 import Contact from "components/Contact.js";
 import Predict from "components/Predict.js";
 import Data from "components/Data.js";
+import NoMatch from "components/NoMatch.js";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Switch>
-        <Route
-          path="/home"
-          render={(props) => <LandingPage {...props} />}
-        />
-        <Route
-          path="/evaluate"
-          render={(props) => <Predict {...props} />}
-        />
-        <Route
-          path="/data"
-          render={(props) => <Data {...props} />}
-        />
-        <Route
-          path="/about"
-          render={(props) => <About {...props} />}
-        />
-        <Route
-          path="/contact"
-          render={(props) => <Contact {...props} />}
-        />
-        {/* <Redirect to="/index" /> */}
-        <Redirect from="/" to="/home" />
-      </Switch>
-    </Switch>
-  </BrowserRouter>,
+  <React.Fragment>
+      <BrowserRouter>
+        <Switch>
+						<Route exact path="/" component={LandingPage} />
+						<Route path="/about" component={About} />
+						<Route path="/data" component={Data} />
+						<Route path="/contact" component={Contact} />
+						<Route path="/evaluate" component={Predict} />
+						<Route component={NoMatch} />
+        </Switch>
+      </BrowserRouter>
+  </React.Fragment>,
+  // <BrowserRouter>
+  //   <Switch>
+  //     <Switch>
+  //       <Route
+  //         path="/home"
+  //         render={(props) => <LandingPage {...props} />}
+  //       />
+  //       <Route
+  //         path="/evaluate"
+  //         render={(props) => <Predict {...props} />}
+  //       />
+  //       <Route
+  //         path="/data"
+  //         render={(props) => <Data {...props} />}
+  //       />
+  //       <Route
+  //         path="/about"
+  //         render={(props) => <About {...props} />}
+  //       />
+  //       <Route
+  //         path="/contact"
+  //         render={(props) => <Contact {...props} />}
+  //       />
+  //       {/* <Redirect to="/index" /> */}
+  //       <Redirect from="/" to="/home" />
+  //     </Switch>
+  //   </Switch>
+  // </BrowserRouter>,
   document.getElementById("root")
 );

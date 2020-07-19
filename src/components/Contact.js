@@ -19,7 +19,7 @@ function Contact() {
             <div className="section section-contact-us text-center">
                 <Container>
                     <h2 className="title">Contact Us</h2>
-                    <p className="description">Please let us know if you have any questions for us</p>
+                    <h5 className="text-muted">Please let us know if you have any questions or comments for us</h5>
                     <Row>
                     <Col className="text-center ml-auto mr-auto" lg="6" md="8">
                         <InputGroup
@@ -33,7 +33,7 @@ function Contact() {
                             </InputGroupText>
                         </InputGroupAddon>
                         <Input
-                            placeholder="First Name..."
+                            placeholder="Full Name..."
                             type="text"
                             onFocus={() => setFirstFocus(true)}
                             onBlur={() => setFirstFocus(false)}
@@ -65,6 +65,7 @@ function Contact() {
                             type="textarea"
                         ></Input>
                         </div>
+                        <br />
                         <div className="send-button">
                         <Button
                             block

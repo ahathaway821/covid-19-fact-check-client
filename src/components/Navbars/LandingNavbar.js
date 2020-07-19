@@ -61,7 +61,7 @@ function LandingNavbar() {
                 </NavLink>
               </NavItem> */}
               <NavItem>
-                <NavLink to="/home" tag={Link}>
+                <NavLink to="/" tag={Link}>
                   <p className={textColor}>
                     Home
                   </p>
