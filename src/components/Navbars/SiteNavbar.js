@@ -1,50 +1,114 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// reactstrap components
 import {
   Collapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  NavbarBrand,
   Navbar,
   NavItem,
   NavLink,
   Nav,
   Container,
-  UncontrolledTooltip,
 } from "reactstrap";
 
+/*
 function SiteNavbar() {
+  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
+  const [textColor, setTextColor] = React.useState("");
+  const [collapseOpen, setCollapseOpen] = React.useState(false);
+  React.useEffect(() => {
+    const updateNavbarColor = () => {
+      if (
+        document.documentElement.scrollTop > 399 ||
+        document.body.scrollTop > 399
+      ) {
+        setNavbarColor("");
+        setTextColor("text-muted");
+      } else if (
+        document.documentElement.scrollTop < 400 ||
+        document.body.scrollTop < 400
+      ) {
+        setNavbarColor("navbar-transparent");
+        setTextColor("");
+      }
+    };
+    window.addEventListener("scroll", updateNavbarColor);
+    return function cleanup() {
+      window.removeEventListener("scroll", updateNavbarColor);
+    };
+  });
   return (
     <>
-      <Navbar color="info" expand="lg">
-      <Container>
-            <Nav navbar >
+      {collapseOpen ? (
+        <div
+          id="bodyClick"
+          onClick={() => {
+            document.documentElement.classList.toggle("nav-open");
+            setCollapseOpen(false);
+          }}
+        />
+      ) : null}
+      <Navbar className={"fixed-top " + navbarColor} expand="lg">
+        <Container>
+          <Collapse
+            className="justify-content-end"
+            isOpen={collapseOpen}
+            navbar
+          >
+            <Nav navbar>
               <NavItem>
-                <NavLink to="/landing-page" tag={Link}>
-                  Home
-                </NavLink>
-              </NavItem>
-           </Nav>
-
-        </Container>
-        <Container className="justify-content-end">
-            <Nav navbar >
-              {/* <NavItem>
-                <NavLink to="/evaluate" tag={Link}>
-                  Evaluate Claims
-                </NavLink>
-              </NavItem> */}
-              <NavItem>
-                <NavLink to="/data" tag={Link}>
-                  Model
+                <NavLink to="/home" tag={Link}>
+                  <p className={textColor}>
+                    Home
+                  </p>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/about" tag={Link}>
-                  About
+                  <p className={textColor}>
+                    About
+                  </p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/contact" tag={Link}>
+                  <p className={textColor}>
+                    Contact Us
+                  </p>
+                </NavLink>
+              </NavItem>
+           </Nav>
+          </Collapse>
+        </Container>
+      </Navbar>
+    </>
+  );
+}
+*/
+
+function SiteNavbar() {
+  return (
+    <>
+      <Navbar color="transparent" expand="lg">
+        <Container className="justify-content-end">
+            <Nav navbar >
+              <NavItem>
+                <NavLink to="/home" tag={Link}>
+                  <p className="text-muted">
+                    Home
+                  </p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/about" tag={Link}>
+                  <p className="text-muted">
+                    About
+                  </p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/contact" tag={Link}>
+                  <p className="text-muted">
+                    Contact Us
+                  </p>
                 </NavLink>
               </NavItem>
            </Nav>

@@ -60,29 +60,29 @@ class ResearchPapers extends React.Component {
             items = this.state.isLoaded ? this.state.items.map((item, key) => {
                 return (
                     <div key={item.id}>
-                        <br />
                         <Card>
                             <CardBody>
                                 <CardTitle>
-                                    <h3>{item.fields.title ? item.fields.title.replace( /(<([^>]+)>)/ig, '') : ""}</h3>
+                                    <h4>{item.fields.title ? item.fields.title.replace( /(<([^>]+)>)/ig, '') : ""}</h4>
                                 </CardTitle>
-                                <b>Absract: </b>
-                                <ShowMoreText
-                                    lines={3}
-                                    more='Show more'
-                                    less='Show less'
-                                    anchorClass=''
-                                    onClick={this.executeOnClick}
-                                    expanded={false}
-                                >
-                                    {item.fields.abstract ? item.fields.abstract.replace( /(<([^>]+)>)/ig, '') : ""}
-                                </ShowMoreText>
-                                <br />
+                                <CardText>
+                                    <b>Absract: </b>
+                                    <ShowMoreText
+                                        lines={3}
+                                        more='Show more'
+                                        less='Show less'
+                                        anchorClass=''
+                                        onClick={this.executeOnClick}
+                                        expanded={false}
+                                    >
+                                        {item.fields.abstract ? item.fields.abstract.replace( /(<([^>]+)>)/ig, '') : ""}
+                                    </ShowMoreText>
+                                </CardText>
                                 <CardText>
                                     <b>Keywords: </b>
                                     {item.fields.keywords_ml ? item.fields.keywords_ml.slice(0,5).map( keyword =>
                                         <span key={`${keyword}`}>
-                                            <Badge color="info" key={`${keyword}`}>
+                                            <Badge color="info" key={`${keyword}`} pill>
                                                 {keyword}
                                             </Badge>{' '}
                                         </span>
@@ -92,7 +92,7 @@ class ResearchPapers extends React.Component {
                                     <b>Categories: </b>
                                     {item.fields.tags ? item.fields.tags.map( tag =>
                                         <span key={`${tag}`}>
-                                            <Badge color="primary" key={`${tag}`}>
+                                            <Badge color="default" key={`${tag}`} pill>
                                                 {tag}
                                             </Badge>{' '}
                                         </span>

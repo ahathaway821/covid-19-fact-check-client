@@ -1,6 +1,6 @@
 import React from "react";
 import axios from 'axios';
-import { Card, CardTitle, CardBody, CardText, Spinner, Badge } from "reactstrap";
+import { Card, CardTitle, CardBody, CardText, Spinner, Badge, CardLink, Button } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import ShowMoreText from 'react-show-more-text';
 
@@ -80,6 +80,10 @@ class SimilarClaims extends React.Component {
                             <Card>
                                 <CardBody>
                                     <CardTitle>
+                                        <h4>{item.claim}</h4>
+                                    </CardTitle>
+                                    <CardText>
+                                        <b>Explanation: </b>
                                         <ShowMoreText
                                             lines={3}
                                             more='Show more'
@@ -88,26 +92,14 @@ class SimilarClaims extends React.Component {
                                             onClick={this.executeOnClick}
                                             expanded={false}
                                         >
-                                            {item.claim}
+                                            {item.explanation}
                                         </ShowMoreText>
-                                    </CardTitle>
-                                    <h4>Explanation</h4> : 
-                                    <ShowMoreText
-                                        lines={3}
-                                        more='Show more'
-                                        less='Show less'
-                                        anchorClass=''
-                                        onClick={this.executeOnClick}
-                                        expanded={false}
-                                    >
-                                        {item.explanation}
-                                    </ShowMoreText>
-                                    <br />
+                                    </CardText>
                                     <CardText>
                                         <b>Fact Check Date</b> : {item.date}
                                     </CardText>
                                     <CardText>
-                                        <b>Fact Check URL</b> : <a href={item.fact_check_url}>{item.fact_check_url}</a>
+                                        <b>Fact Check URL</b> : <CardLink href={item.fact_check_url} target="_blank">{item.fact_check_url}</CardLink>
                                     </CardText>
                                     <CardText>
                                         <b>Fact Checked by</b> : {item.source}

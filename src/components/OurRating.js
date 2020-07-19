@@ -74,18 +74,19 @@ class OurRating extends React.Component {
                 value = progressBarPercentage
             }
             return (
-                <Card style={{ height: '18rem' }}>
+                <Card style={{ height: '20rem' }}>
                     <CardBody>
-                        <CardTitle><h3>Our Rating ({progressBarPercentage}% {ratingLabel})</h3></CardTitle>
+                        {/* <CardTitle><h3>Rating ({progressBarPercentage}% {ratingLabel})</h3></CardTitle> */}
+                        <CardTitle><h3>Rating</h3></CardTitle>
                         <CardText><i>This rating was predicted by our algorithm</i></CardText>
                         <center>
                             <ReactSpeedometer
-                                height={150}
+                                height={250}
                                 minValue={0}
                                 maxValue={100}
                                 needleHeightRatio={0.6}
                                 value={value}
-                                customSegmentStops={[0, 25, 75, 100]}
+                                customSegmentStops={[0, 30, 70, 100]}
                                 segmentColors={["#dc3545", "#ffc107", "#28a745"]}
                                 currentValueText="COVIDFact Rating"
                                 customSegmentLabels={[
@@ -113,7 +114,6 @@ class OurRating extends React.Component {
                                 labelFontSize={"13"}
                             />
                         </center>
-                        <br />
                     </CardBody>
                 </Card>
             );
