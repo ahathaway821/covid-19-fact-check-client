@@ -44,9 +44,9 @@ function LandingPage() {
             <Row>
               <Col className="ml-auto mr-auto text-center" md="8">
                 <h2 className="title">Evaluate a COVID-19 Claim</h2>
-                <h5 className="description">
+                {/* <h5 className="description">
                   <i>"Here we would explain the types of claims we can evaluate"</i>
-                </h5>
+                </h5> */}
                 <Home/>
               </Col>
             </Row>
