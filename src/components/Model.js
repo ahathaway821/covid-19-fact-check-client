@@ -28,81 +28,91 @@ class Model extends React.Component {
                         </Row>
                         <Row>
                             <Col>
-                                <Card style={{ width: "20rem" }}>
+                                <Card style={{ width: "20rem", height: "30rem" }}>
                                     <CardBody>
-                                        <CardTitle tag="h3">Our Data</CardTitle>
-                                    <CardSubtitle className="mb-2 text-muted">
+                                        <CardTitle tag="h3" className="text-center">Our Data</CardTitle>
+                                    {/* <CardSubtitle className="mb-2 text-muted">
                                         Card subtitle
-                                    </CardSubtitle>
-                                    <CardText>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
+                                    </CardSubtitle> */}
+                                    <CardText className="text-justify">
+                                        We are combining data from multiple fact checking organizations such as Poynter, Politifact, 
+                                        Empirical Studies of Conflict (ESOC) at Princeton as well as websites that include lists of 
+                                        common FAQ’s such as the World Health Organization (WHO) and
+                                        Centers for Disease Control and Prevention (CDC). 
+                                        <br /><br /><br /><br />
                                     </CardText>
-                                    <CardLink href="#pablo" onClick={e => e.preventDefault()}>
-                                        Card link
+                                    <CardLink href="https://www.poynter.org/ifcn-covid-19-misinformation/" target="_blank">
+                                        Poynter
                                     </CardLink>
-                                    <CardLink href="#pablo" onClick={e => e.preventDefault()}>
-                                        Another link
+                                    <CardLink href="https://esoc.princeton.edu/publications/esoc-covid-19-disinformation-tracking-report" target="_blank">
+                                        ESOC
+                                    </CardLink>
+                                    <CardLink href="https://www.who.int/csr/disease/coronavirus_infections/faq_dec12/en/" target="_blank">
+                                        WHO
+                                    </CardLink>
+                                    <CardLink href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html" target="_blank">
+                                        CDC
                                     </CardLink>
                                     </CardBody>
                                 </Card>
                             </Col>
                             <Col>
-                                <Card style={{ width: "20rem" }}>
+                                <Card style={{ width: "20rem", height: "30rem" }}>
                                     <CardBody>
-                                    <CardTitle tag="h3">Our Infrastructure</CardTitle>
-                                    <CardSubtitle className="mb-2 text-muted">
+                                    <CardTitle tag="h3" className="text-center">Our Approach</CardTitle>
+                                    {/* <CardSubtitle className="mb-2 text-muted">
                                         Card subtitle
-                                    </CardSubtitle>
-                                    <CardText>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
+                                    </CardSubtitle> */}
+                                    <CardText className="text-justify">
+                                        We are using a BERT model
+                                        to perform classification for our claims. The word embeddings from BERT are passed to
+                                        a Convolutional Neural Network which forwards it to a
+                                        Feed Forward Deep Neural Network that uses sigmoid activation to predict the output.
+                                        For generating semantically similar claims, we are using Google Cloud Platform's 
+                                        natural language API.
                                     </CardText>
-                                    <CardLink href="#pablo" onClick={e => e.preventDefault()}>
-                                        Card link
+                                    <CardLink href="https://github.com/google-research/bert" target="_blank">
+                                        BERT
                                     </CardLink>
-                                    <CardLink href="#pablo" onClick={e => e.preventDefault()}>
-                                        Another link
+                                    <CardLink href="https://cloud.google.com/natural-language/docs" target="_blank">
+                                        Natural Language API
                                     </CardLink>
                                     </CardBody>
                                 </Card>
                             </Col>
                             <Col>
-                                <Card style={{ width: "20rem" }}>
+                                <Card style={{ width: "20rem", height: "30rem" }}>
                                     <CardBody>
-                                    <CardTitle tag="h3">Our Approach</CardTitle>
-                                    <CardSubtitle className="mb-2 text-muted">
+                                    <CardTitle tag="h3" className="text-center">Our Infrastructure</CardTitle>
+                                    {/* <CardSubtitle className="mb-2 text-muted">
                                         Card subtitle
-                                    </CardSubtitle>
-                                    <CardText>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
+                                    </CardSubtitle> */}
+                                    <CardText className="text-justify">
+                                        We are using Amazon Web Services extensively for this project. The frontend is a react application
+                                        which is being served using AWS-Amplify. There are multiple API endpoints setup using AWS Sagemaker that
+                                        fetch similar claims, relevant research papers, run inference on our deployed models as well as serve the typeahead feature.
+                                        <br /><br />
+                                        Take a look at the diagram below for the entire architecture 
                                     </CardText>
-                                    <CardLink href="#pablo" onClick={e => e.preventDefault()}>
-                                        Card link
-                                    </CardLink>
-                                    <CardLink href="#pablo" onClick={e => e.preventDefault()}>
-                                        Another link
-                                    </CardLink>
-                                    </CardBody>
+                                   </CardBody>
                                 </Card>
                             </Col>
                         </Row>
                     </Container>
                     <Container>
                         <Row>
+                            <Col className="ml-auto mr-auto text-center" md="8">
+                                <h2 className="title">Architecture</h2>
+                            </Col>
+                        </Row>
+                        <Row>
                         <Col className="ml-auto mr-auto text-center" md="8">
-                            <h5 className="text-justify text-muted">
-                                <br />
-                                Architecture
-                                <hr />
-                                <img
-                                    alt="..."
-                                    className="img-fluid img-raised"
-                                    src={require("assets/img/architecture.png")}
-                                    >
-                                </img>
-                            </h5>
+                            <img
+                                alt="..."
+                                className="img-fluid img-raised"
+                                src={require("assets/img/architecture.png")}
+                                >
+                            </img>
                         </Col>
                         </Row>
                     </Container>

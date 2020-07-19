@@ -59,7 +59,7 @@ class About extends React.Component {
                                                 <img
                                                     alt="..."
                                                     className="rounded-circle img-fluid img-raised"
-                                                    src={require("assets/img/ryan.jpg")}
+                                                    src={require("assets/img/julie.jpg")}
                                                     >
                                                 </img>
                                                 <h4 className="title">Angel Chen</h4>
@@ -96,7 +96,7 @@ class About extends React.Component {
                                                 <img
                                                 alt="..."
                                                 className="rounded-circle img-fluid img-raised"
-                                                src={require("assets/img/julie.jpg")}
+                                                src={require("assets/img/ryan.jpg")}
                                                 ></img>
                                                 <h4 className="title">Anup Jha</h4>
                                                 <p className="category text-info">Software Engineer</p>
@@ -144,7 +144,7 @@ class About extends React.Component {
                                                 ></img>
                                                 <h4 className="title">Sartaj Baveja</h4>
                                                 <p className="category text-info">Software Engineer</p>
-                                                <p className="text-muted">
+                                                <p className="text-muted text-justify">
                                                 Sartaj is currently working as a Software Engineer at 
                                                 the Lawrence Berkeley National Lab where he works
                                                 on building tools for a high-performance national 
@@ -170,11 +170,12 @@ class About extends React.Component {
                                                 className="rounded-circle img-fluid img-raised"
                                                 src={require("assets/img/team/xander.jpg")}
                                                 ></img>
-                                                <h4 className="title">Xander Hathaway</h4>
+                                                <h4 className="title" style={{paddingTop: "35px"}}>Xander Hathaway</h4>
                                                 <p className="category text-info">Software Engineer</p>
-                                                <p className="text-muted">
+                                                <p className="text-muted text-justify">
                                                 Xander works as a Solution Architect with Slalom Build where he designs and builds a variety of cloud-based custom software solutions.{" "}
                                                 </p>
+                                                <br /><br /><br /><br />
                                                 <Button
                                                 className="btn-icon btn-round"
                                                 color="info"
