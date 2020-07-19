@@ -31,6 +31,7 @@ import 'react-bootstrap-typeahead/css/Typeahead.css';
 // pages for this kit
 import LandingPage from "views/LandingPage.js";
 import About from "components/About.js";
+import Contact from "components/Contact.js";
 import Predict from "components/Predict.js";
 import Data from "components/Data.js";
 
@@ -53,6 +54,10 @@ ReactDOM.render(
         <Route
           path="/about"
           render={(props) => <About {...props} />}
+        />
+        <Route
+          path="/contact"
+          render={(props) => <Contact {...props} />}
         />
         {/* <Redirect to="/index" /> */}
         <Redirect from="/" to="/home" />

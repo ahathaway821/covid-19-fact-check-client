@@ -78,7 +78,7 @@ class OurRating extends React.Component {
                     <CardBody>
                         {/* <CardTitle><h3>Rating ({progressBarPercentage}% {ratingLabel})</h3></CardTitle> */}
                         <CardTitle><h3>Rating</h3></CardTitle>
-                        <CardText><i>This rating was predicted by our algorithm</i></CardText>
+                        <CardText><i>This rating was predicted by our algorithm ({Math.round(progressBarPercentage)}% {ratingLabel})</i></CardText>
                         <center>
                             <ReactSpeedometer
                                 height={250}
