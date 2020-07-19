@@ -100,11 +100,11 @@ class Rating extends React.Component {
                                         <br />
                                         {source ? <a href={source}>{source}</a> : "-"}
                                     </CardText>
-                                    {claim_source ?? <CardText>
+                                    <CardText>
                                         <b>Source of Claim: </b>
                                         <br />
                                         {claim_source.trim() ? <a href={claim_source}>{claim_source}</a> : "-"}
-                                    </CardText>}
+                                    </CardText>
                                 </CardBody>
                             </Card>
                         </Col>
