@@ -76,7 +76,7 @@ class Predict extends React.Component {
                     className="sticky-top"           
                     >
                     <Row className="justify-content-md-center">
-                        <Col md={{ size: 4, offset: 0 }}>
+                        <Col md={{ size: 6, offset: 0 }}>
                             <ClaimSearch 
                                 onSelectedValue={this.handleSelectedValue}                 
                                 onChangeValue={this.handleChangeValue}

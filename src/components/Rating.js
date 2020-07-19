@@ -96,10 +96,15 @@ class Rating extends React.Component {
                                         {fact_check_url ? <a href={fact_check_url}>{fact_check_url}</a> : "-"}
                                     </CardText>
                                     <CardText>
+                                        <b>Fact Check Organization: </b>
+                                        <br />
+                                        {source ? <a href={source}>{source}</a> : "-"}
+                                    </CardText>
+                                    {claim_source ?? <CardText>
                                         <b>Source of Claim: </b>
                                         <br />
                                         {claim_source.trim() ? <a href={claim_source}>{claim_source}</a> : "-"}
-                                    </CardText>
+                                    </CardText>}
                                 </CardBody>
                             </Card>
                         </Col>

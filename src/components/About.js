@@ -171,42 +171,19 @@ class About extends React.Component {
                                                 <img
                                                 alt="..."
                                                 className="rounded-circle img-fluid img-raised"
-                                                src={require("assets/img/eva.jpg")}
+                                                src={require("assets/img/team/xander.jpg")}
                                                 ></img>
                                                 <h4 className="title">Xander Hathaway</h4>
                                                 <p className="category text-info">Software Engineer</p>
                                                 <p className="text-muted">
-                                                You can write here details about one of your team members.
-                                                You can give more details about what they do. Feel free to
-                                                add some{" "}
-                                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                                    links
-                                                </a>{" "}
-                                                for people to be able to follow them outside the site.
+                                                Xander works as a Solution Architect with Slalom Build where he designs and builds a variety of cloud-based custom software solutions.{" "}
                                                 </p>
                                                 <Button
                                                 className="btn-icon btn-round"
                                                 color="info"
-                                                href="#pablo"
-                                                onClick={(e) => e.preventDefault()}
+                                                href="https://www.linkedin.com/in/xander-hathaway-88591688/"
                                                 >
-                                                <i className="fab fa-google-plus"></i>
-                                                </Button>
-                                                <Button
-                                                className="btn-icon btn-round"
-                                                color="info"
-                                                href="#pablo"
-                                                onClick={(e) => e.preventDefault()}
-                                                >
-                                                <i className="fab fa-youtube"></i>
-                                                </Button>
-                                                <Button
-                                                className="btn-icon btn-round"
-                                                color="info"
-                                                href="#pablo"
-                                                onClick={(e) => e.preventDefault()}
-                                                >
-                                                <i className="fab fa-twitter"></i>
+                                                <i className="fab fa-linkedin"></i>
                                                 </Button>
                                             </div>
                                         </Col>
