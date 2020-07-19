@@ -3,6 +3,11 @@ import axios from 'axios';
 import { Card, CardTitle, CardBody, CardText, Spinner } from "reactstrap";
 import ReactSpeedometer from "react-d3-speedometer"
 
+const modelVersions = {
+    'bert-cnn': 'bert-cnn',
+    'bert-cnn-with-summarizer': 'bert-cnn-summ'
+}
+
 class OurRating extends React.Component {
     constructor(props) {
         super(props);
@@ -40,7 +45,7 @@ class OurRating extends React.Component {
 
     getPredictionRating(claim) {
         this.setState({isLoaded: false, error: null})
-        axios.get(`https://eqx0uj4n69.execute-api.us-west-2.amazonaws.com/dev/bert-cnn?claim=${this.props.claim}`)
+        axios.get(`https://eqx0uj4n69.execute-api.us-west-2.amazonaws.com/dev/${modelVersions["bert-cnn-with-summarizer"]}?claim=${this.props.claim}`)
             .then(
                 (result) => {
                     this.setState({
