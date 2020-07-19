@@ -1,7 +1,8 @@
 import React from "react";
 import axios from 'axios';
-import ListGroup from "react-bootstrap/ListGroup";
+// import ListGroup from "react-bootstrap/ListGroup";
 import { withRouter } from "react-router-dom";
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 let isLocal = process.env.IS_LOCAL ?? false;
 let SEARCH_URI = ''
@@ -101,12 +102,12 @@ class PopularClaims extends React.Component {
     render() {
         return (
             <div style={{ textAlign: 'left'}}>
-                <b>Try out these claims!</b>
-                <ListGroup variant="flush">
-                    <ListGroup.Item action onClick={(e) => this.handleClick(1, e)}>Face masks can be steamed for reuse.</ListGroup.Item>
-                    <ListGroup.Item action onClick={(e) => this.handleClick(2, e)}>5G mobile networks do not spread COVID-19</ListGroup.Item>
-                    <ListGroup.Item action onClick={(e) => this.handleClick(3, e)}>Hydroxychloroquine (HCQ) can prevent COVID-19</ListGroup.Item>
-                    <ListGroup.Item action onClick={(e) => this.handleClick(4, e)}>Hypertension is a common comorbidity seen in COVID-19 patients</ListGroup.Item>
+                <p><strong>Try out these claims!</strong></p>
+                <ListGroup flush>
+                    <ListGroupItem action onClick={(e) => this.handleClick(1, e)}>Face masks can be steamed for reuse.</ListGroupItem>
+                    <ListGroupItem action onClick={(e) => this.handleClick(2, e)}>5G mobile networks do not spread COVID-19</ListGroupItem>
+                    <ListGroupItem action onClick={(e) => this.handleClick(3, e)}>Hydroxychloroquine (HCQ) can prevent COVID-19</ListGroupItem>
+                    <ListGroupItem action onClick={(e) => this.handleClick(4, e)}>Hypertension is a common comorbidity seen in COVID-19 patients</ListGroupItem>
                 </ListGroup>
             </div>
         );

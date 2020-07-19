@@ -104,9 +104,7 @@ class ClaimSearch extends React.Component {
                         filterBy={(option, props) => option}
                         
                         renderMenuItemChildren={(option, props) => (
-                        <div>
                             <span>{option.claim}</span>
-                        </div>
                         )}
                     />
                 </div>

@@ -32,19 +32,19 @@ function SiteNavbar() {
         </Container>
         <Container className="justify-content-end">
             <Nav navbar >
-              <NavItem>
+              {/* <NavItem>
                 <NavLink to="/evaluate" tag={Link}>
                   Evaluate Claims
                 </NavLink>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
                 <NavLink to="/data" tag={Link}>
-                  Our Model
+                  Model
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/about" tag={Link}>
-                  About Us
+                  About
                 </NavLink>
               </NavItem>
            </Nav>
