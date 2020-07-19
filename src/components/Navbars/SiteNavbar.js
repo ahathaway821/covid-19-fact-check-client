@@ -1,50 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// reactstrap components
 import {
-  Collapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  NavbarBrand,
   Navbar,
   NavItem,
   NavLink,
   Nav,
   Container,
-  UncontrolledTooltip,
 } from "reactstrap";
 
 function SiteNavbar() {
   return (
     <>
-      <Navbar color="info" expand="lg">
-      <Container>
-            <Nav navbar >
-              <NavItem>
-                <NavLink to="/landing-page" tag={Link}>
-                  Home
-                </NavLink>
-              </NavItem>
-           </Nav>
-
-        </Container>
+      <Navbar color="transparent" expand="lg">
         <Container className="justify-content-end">
             <Nav navbar >
-              {/* <NavItem>
-                <NavLink to="/evaluate" tag={Link}>
-                  Evaluate Claims
-                </NavLink>
-              </NavItem> */}
               <NavItem>
-                <NavLink to="/data" tag={Link}>
-                  Model
+                <NavLink to="/home" tag={Link}>
+                  <p className="text-muted">
+                    Home
+                  </p>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/about" tag={Link}>
-                  About
+                  <p className="text-muted">
+                    About
+                  </p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/contact" tag={Link}>
+                  <p className="text-muted">
+                    Contact Us
+                  </p>
                 </NavLink>
               </NavItem>
            </Nav>

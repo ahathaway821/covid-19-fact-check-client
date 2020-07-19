@@ -13,33 +13,30 @@ class Rating extends React.Component {
 
             let value;
             if (label === "true") {
-                value = 95;
+                value = 90;
             } else {
-                value = 5;
+                value = 10;
             }
 
             return (
                 <Container>
                     <Row>
                         <Col>
-                            <Card style={{ height: '18rem' }}>
+                            <Card style={{ height: '20rem' }}>
                                 <CardBody>
                                     <CardTitle><h3>Claim</h3></CardTitle>
-                                    <CardSubtitle><h5>{this.props.claim}</h5></CardSubtitle>
+                                    <CardText><h5>{this.props.claim}</h5></CardText>
                                 </CardBody>
                             </Card>
                         </Col>
                         <Col>
-                            <Card style={{ height: '18rem' }}>
-            
+                            <Card style={{ height: '20rem' }}>
                                 <CardBody>
-                                <CardTitle>
-                                    <h3>Rating</h3>
-                                </CardTitle>
+                                    <CardTitle><h3>Rating</h3></CardTitle>
                                     <CardText><i>This claim was fact-checked by {source}</i></CardText> {/* TODO - conditionally show source */}
                                     <center>
                                         <ReactSpeedometer
-                                            height={150}
+                                            height={250}
                                             minValue={0}
                                             maxValue={100}
                                             needleHeightRatio={0.6}
@@ -76,36 +73,36 @@ class Rating extends React.Component {
                             </Card>
                         </Col>
                     </Row>
-                    <br />
-
-                    <Row>                
-                        <Card>
-                            <CardBody>
-                            <CardTitle><h3>More Details</h3></CardTitle>
-
-                            <CardSubtitle>Explanation</CardSubtitle>
-                            <CardText>{explanation ? explanation : "-"}</CardText>
-
-                                <CardSubtitle>
-                                    Fact Check Date
-                                </CardSubtitle>
-                                <CardText>
-                                    {date !== "1970-01-01" ? date : "-"}
-                                </CardText>
-                                <CardSubtitle>
-                                    Fact Check URL
-                                </CardSubtitle>
-                                <CardText>
-                                    {fact_check_url ? <a href={fact_check_url}>{fact_check_url}</a> : "-"}
-                                </CardText>
-                                <CardSubtitle>
-                                    Source of Claim
-                                </CardSubtitle>
-                                <CardText>
-                                    {claim_source.trim() ? <a href={claim_source}>{claim_source}</a> : "-"}
-                                </CardText>
-                            </CardBody>
-                        </Card>
+                    <Row>
+                        <Col>
+                            <Card>
+                                <CardBody>
+                                    <CardTitle>
+                                        <h3>More Details</h3>
+                                    </CardTitle>
+                                    <CardText>
+                                        <b>Explanation: </b>
+                                        <br />
+                                        {explanation ? explanation : "-"}
+                                    </CardText>
+                                    <CardText>
+                                        <b>Fact Check Date: </b>
+                                        <br />
+                                        {date !== "1970-01-01" ? date : "-"}
+                                    </CardText>
+                                    <CardText>
+                                        <b>Fact Check URL: </b>
+                                        <br />
+                                        {fact_check_url ? <a href={fact_check_url}>{fact_check_url}</a> : "-"}
+                                    </CardText>
+                                    <CardText>
+                                        <b>Source of Claim: </b>
+                                        <br />
+                                        {claim_source.trim() ? <a href={claim_source}>{claim_source}</a> : "-"}
+                                    </CardText>
+                                </CardBody>
+                            </Card>
+                        </Col>
                     </Row> 
                 </Container>      
             );
@@ -114,10 +111,10 @@ class Rating extends React.Component {
                 <Container>
                     <Row>
                         <Col>
-                            <Card style={{ height: '18rem' }}>
+                            <Card style={{ height: '20rem' }}>
                                 <CardBody>
                                     <CardTitle><h3>Claim</h3></CardTitle>
-                                    <CardSubtitle>{this.props.claim}</CardSubtitle>
+                                    <CardText><h5>{this.props.claim}</h5></CardText>
                                 </CardBody>
                             </Card>
                         </Col>

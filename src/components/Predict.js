@@ -68,15 +68,15 @@ class Predict extends React.Component {
 
     render() {
         return (
-            <div>
-                <SiteNavbar />
-                <div className="wrapper">
+          <>
+            <SiteNavbar></SiteNavbar>
+            <div className="wrapper">
                 <Container 
                     fluid 
                     className="sticky-top"           
                     >
                     <Row className="justify-content-md-center">
-                        <Col md={{ size: 8, offset: 0 }}>
+                        <Col md={{ size: 4, offset: 0 }}>
                             <ClaimSearch 
                                 onSelectedValue={this.handleSelectedValue}                 
                                 onChangeValue={this.handleChangeValue}
@@ -101,18 +101,21 @@ class Predict extends React.Component {
                     claimIndexResult={this.state.claimIndexResult} 
                 />
 
-                <br />
+                {/* <br /> */}
+            <Container>
+                <Feedback claim={this.state.claim} isValidatedClaim={this.state.isValidatedClaim}/>
+            </Container>
 
-   
             <Container>
                 <Card>
-                <CardHeader>
-                  <Nav
-                    className="nav-tabs-neutral justify-content-center"
-                    data-background-color="blue"
-                    role="tablist"
-                    tabs
-                  >
+                  <CardHeader>
+                    <Nav
+                      className="justify-content-center"
+                      // className="nav-tabs-neutral justify-content-center"
+                      // data-background-color="blue"
+                      role="tablist"
+                      tabs
+                    >
                     <NavItem>
                       <NavLink
                         className={this.state.pills === "1" ? "active" : ""}
@@ -122,6 +125,7 @@ class Predict extends React.Component {
                           this.setPills("1");
                         }}
                       >
+                        <i className="now-ui-icons education_paper"></i>
                         Relevant Research Papers
                       </NavLink>
                     </NavItem>
@@ -134,14 +138,14 @@ class Predict extends React.Component {
                           this.setPills("2");
                         }}
                       >
+                        <i className="now-ui-icons business_bulb-63"></i>
                         Similar Claims
                       </NavLink>
                     </NavItem>
                   </Nav>
                 </CardHeader>
                 <CardBody>
-                  <TabContent
-                    
+                  <TabContent  
                     activeTab={"pills" + this.state.pills}
                   >
                     <TabPane tabId="pills1">
@@ -154,25 +158,11 @@ class Predict extends React.Component {
                 </CardBody>
               </Card>
               </Container>
-            <Container>
-                <Feedback claim={this.state.claim} isValidatedClaim={this.state.isValidatedClaim}/>
-            </Container>
-
-
-                {/* <Tabs transition={false} id="list-research-papers" defaultActiveKey="first">
-                    <Tab eventKey="first" title="Relevant Research Papers">
-                        <ResearchPapers claim={this.state.claim}/>
-                    </Tab>
-                    <Tab eventKey="second" title="Similar Claims">
-                        <br />
-                        <SimilarClaims claim={this.state.claim} />
-                    </Tab>
-                </Tabs> */}
-                </div>
-                <DefaultFooter/>
-            </div>
-        );
-    }
+          </div>
+        <DefaultFooter/>
+      </>
+    );
+  }
 }
 
 export default withRouter(Predict);

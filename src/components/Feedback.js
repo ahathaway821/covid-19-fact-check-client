@@ -68,11 +68,10 @@ class Feedback extends React.Component {
             <Card>     
                 <CardBody>
                     <CardTitle><h3>Feedback</h3></CardTitle>
-                    <CardText>{'Did you find this page to be helpful?'}
-                        {' '}</CardText>
-                    
+                    <CardText>{'Did you find this page to be helpful?'}{' '}
                     <Button variant="secondary" size="sm" onClick={() => this.handleShowModal(true)}>Yes</Button>{' '}
                     <Button variant="secondary" size="sm" onClick={() => this.handleShowModal(false)}>No</Button>
+                    </CardText>
                 </CardBody>
             </Card>
             <Modal isOpen={this.state.showModal} toggle={this.handleCloseModal}>
@@ -92,7 +91,7 @@ class Feedback extends React.Component {
                         <FormGroup controlId="formFeedback">
                             <Label><b>Reasoning</b></Label>
                             <Input as="textarea" rows="3" value={this.state.reasoning} onChange={this.handleChange}/>
-                            <p className="text-muted">
+                            <p className="text-muted" font-size="1em">
                                 <i>This feedback is anonymous</i>
                             </p>
                         </FormGroup>
