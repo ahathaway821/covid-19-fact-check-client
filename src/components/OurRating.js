@@ -128,8 +128,7 @@ class OurRating extends React.Component {
             <div>
                 <br />
                 <center>
-                    <Spinner animation="border" variant="secondary">
-                    </Spinner>
+                    <Spinner animation="border" variant="secondary"/>
                 </center>
             </div>
         );

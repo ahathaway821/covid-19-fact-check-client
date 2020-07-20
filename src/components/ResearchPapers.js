@@ -106,9 +106,7 @@ class ResearchPapers extends React.Component {
                 <div>
                     <br />
                     <center>
-                        <Spinner>
-                            {/* <span className="sr-only">Loading...</span> */}
-                        </Spinner>
+                        <Spinner/>
                     </center>
                 </div>
             );
