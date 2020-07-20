@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Card, CardHeader, CardSubtitle, CardTitle, CardBody, Container, CardText } from "reactstrap";
+import { Row, Col, Card, CardTitle, CardBody, Container, CardText } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import OurRating from './OurRating';
 import ReactSpeedometer from "react-d3-speedometer"
@@ -9,7 +9,7 @@ class Rating extends React.Component {
         // If claim is pre-checked or not
         if (this.props.isValidatedClaim === true) {
             console.log("this.props", this.props.claimIndexResult);
-            const { claim_source, date, explanation, label, source, source_label, fact_check_url } = this.props.claimIndexResult[0];
+            const { claim_source, date, explanation, label, source, fact_check_url } = this.props.claimIndexResult[0];
 
             let value;
             if (label === "true") {

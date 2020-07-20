@@ -1,8 +1,10 @@
 import React from "react";
 import axios from 'axios';
-import { Card, CardTitle, CardBody, CardText, Spinner, Badge, CardLink, Button } from "reactstrap";
+import { Card, CardTitle, CardBody, CardText, Spinner, Badge, CardLink } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import ShowMoreText from 'react-show-more-text';
+
+import searchClaims from 'shared/searchClaims';
 
 class SimilarClaims extends React.Component {
     constructor(props) {
@@ -22,6 +24,24 @@ class SimilarClaims extends React.Component {
         if (prevProps.claim !== this.props.claim) {
             this.getSimilarClaims(this.props.claim);
         }
+    }
+
+    viewSimilarClaim(claim) {
+        searchClaims(claim)
+            .then(val => {
+                console.log('result')
+                if (!val || !val[0]) {
+                    return;
+                }
+                console.log('past')
+        
+                const selectedClaim = val[0].claim;
+                this.props.history.push({
+                    pathname: '/evaluate',
+                    state: { claimIndexResult: val, claim: selectedClaim, isValidatedClaim: true }
+                })
+                window.location.reload();
+            })
     }
 
     getSimilarClaims(claim) {
@@ -61,19 +81,6 @@ class SimilarClaims extends React.Component {
                 });
             });
     }
-
-    // handleClick(val, e) {
-    //     console.log("claim is ", val);
-
-    //     this.props.history.push({
-    //         pathname: '/evaluate',
-    //         state: { 
-    //             claim: val.claim,
-    //             isValidatedClaim: true,
-    //             claimIndexResult: val
-    //         }
-    //     })
-    // }
 
     render() {
         let similarClaims;
@@ -131,11 +138,6 @@ class SimilarClaims extends React.Component {
                                 <CardBody>
                                     <CardTitle>
                                         <h4>{item.claim}</h4>
-                                        {/* <h4>
-                                            <CardLink style={{cursor: "pointer" }} onClick={(e) => this.handleClick(item, e)}>
-                                                {item.claim}
-                                            </CardLink>
-                                        </h4> */}
                                     </CardTitle>
                                     <CardText>
                                         {item.explanation.trim() !== "" ? (
@@ -202,7 +204,12 @@ class SimilarClaims extends React.Component {
                                         <CardText>
                                             <b>Rating</b> : <Badge color="success">{item.label.charAt(0).toUpperCase() + item.label.slice(1)}</Badge>
                                         </CardText>
-                                    )} */}
+                                    )}
+                                     <CardText>
+                                         <CardLink href="" onClick={() => this.viewSimilarClaim(item.claim)}>
+                                        Learn more
+                                        </CardLink>
+                                    </CardText>
                                     {/* <Card.Text>
                                         <i>Cosine Distance, Sentiment</i> : {item.cosine_dist}, {item.sentiments}
                                     </Card.Text> */}
@@ -216,9 +223,7 @@ class SimilarClaims extends React.Component {
                     <div>
                         <br />
                         <center>
-                            <Spinner>
-                                {/* <span className="sr-only">Loading...</span> */}
-                            </Spinner>
+                            <Spinner/>
                         </center>
                     </div>
                 );
