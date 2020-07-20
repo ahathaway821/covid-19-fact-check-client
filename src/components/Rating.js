@@ -110,7 +110,7 @@ class Rating extends React.Component {
                                             // needleTransition="easeElastic"
                                             needleColor={"#a7ff83"}
                                             textColor={"#000000"}
-                                            labelFontSize={"10"}
+                                            labelFontSize={"13"}
                                         />
                                     </center>
                                 </CardBody>
