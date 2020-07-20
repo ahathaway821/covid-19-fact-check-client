@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { Row, Col, Image, Button } from "reactstrap";
+import { Button } from "reactstrap";
 import ShowMoreText from 'react-show-more-text';
 
 import ClaimSearch from "./ClaimSearch";
@@ -8,7 +8,6 @@ import PopularClaims from "./PopularClaims";
 
 import { submitFeedback, feedbackTypes } from "../shared/submitFeedback";
 
-import logo from "assets/img/logo2.png";
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 class Home extends React.Component {
@@ -55,19 +54,6 @@ class Home extends React.Component {
         }
     }
 
-    // handleEnter() {
-    //     if(this.myRef.current !== null) {
-    //         console.log("handle enter ", this.myRef);
-    //         this.props.history.push({
-    //             pathname: '/predict',
-    //             state: { 
-    //                 claim: this.myRef,
-    //                 isValidatedClaim: false,
-    //             }
-    //         })
-    //     }
-    // }
-
     render() {
         return (
             <div>              
@@ -84,8 +70,7 @@ class Home extends React.Component {
                 />
                 <br />
                 <div className="text-center">
-                    <Button  
-                        className="btn-round"
+                    <Button
                         color="info" 
                         onClick={this.handlePredict}>Evaluate</Button>
                 </div>

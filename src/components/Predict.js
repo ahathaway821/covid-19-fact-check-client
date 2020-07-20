@@ -91,7 +91,7 @@ class Predict extends React.Component {
                         </Col>
                         <Col md="1">
                             <Button 
-                                variant="secondary" 
+                                color="info" 
                                 onClick={this.handlePredict}>
                                 Evaluate
                             </Button>

@@ -29,7 +29,7 @@ class Feedback extends React.Component {
     }
 
     getLabel() {
-        return this.state.isLabelCorrect ? 'Correct' : 'Incorrect';
+        return this.state.isLabelCorrect ? 'Yes' : 'No';
     }
 
     handleChange(event) {
@@ -83,7 +83,13 @@ class Feedback extends React.Component {
                     <hr />
                     <Form>
                         <FormGroup controlId="formFeedback">
-                            <Label><b>Claim Label</b></Label>
+                            <Label><b>Claim</b></Label>
+                            <p>
+                                {this.props.claim}
+                            </p>
+                        </FormGroup>
+                        <FormGroup controlId="formFeedback">
+                            <Label><b>Was the site helpful?</b></Label>
                             <p>
                                 {this.getLabel()}
                             </p>
