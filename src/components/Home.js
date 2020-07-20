@@ -1,10 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-<<<<<<< HEAD
 import { Row, Col, Image, Button, Container } from "reactstrap";
-=======
-import { Button } from "reactstrap";
->>>>>>> 1246575d384b66ff74df1b0ee69afee282b67e9d
 import ShowMoreText from 'react-show-more-text';
 
 import ClaimSearch from "./ClaimSearch";
