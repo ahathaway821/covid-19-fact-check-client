@@ -11,33 +11,33 @@ import {
 function SiteNavbar() {
   return (
     <>
-      <Navbar color="transparent" expand="lg">
+      <Navbar color="dark" expand="lg" className="sticky-top">
         <Container className="justify-content-end">
             <Nav navbar >
               <NavItem>
                 <NavLink to="/" tag={Link}>
-                  <p className="text-muted">
+                  <p className="">
                     Home
                   </p>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/about" tag={Link}>
-                  <p className="text-muted">
+                  <p className="">
                     About
                   </p>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/model" tag={Link}>
-                  <p className="text-muted">
+                  <p className="">
                     How it works
                   </p>
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/contact" tag={Link}>
-                  <p className="text-muted">
+                  <p className="">
                     Contact Us
                   </p>
                 </NavLink>
