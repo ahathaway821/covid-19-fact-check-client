@@ -100,7 +100,7 @@ class SimilarClaims extends React.Component {
                             <Card>
                                 <CardBody>
                                     <CardTitle>
-                                        <h4 onClick={() => this.viewSimilarClaim(item.claim)}><CardLink>{item.claim}</CardLink></h4>
+                                        <h4>{item.claim}</h4>
                                     </CardTitle>
                                     <CardText>
                                         <b>Explanation: </b>
@@ -136,9 +136,11 @@ class SimilarClaims extends React.Component {
                                             <b>Rating</b> : <Badge color="success">{item.label.charAt(0).toUpperCase() + item.label.slice(1)}</Badge>
                                         </CardText>
                                     )}
-                                     <CardText><CardLink href="" onClick={() => this.viewSimilarClaim(item.claim)}>
+                                     <CardText>
+                                         <CardLink href="" onClick={() => this.viewSimilarClaim(item.claim)}>
                                         Learn more
-                                    </CardLink></CardText>
+                                        </CardLink>
+                                    </CardText>
                                     {/* <Card.Text>
                                         <i>Cosine Distance, Sentiment</i> : {item.cosine_dist}, {item.sentiments}
                                     </Card.Text> */}

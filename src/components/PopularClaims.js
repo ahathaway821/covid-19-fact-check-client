@@ -59,10 +59,10 @@ class PopularClaims extends React.Component {
             <div style={{ textAlign: 'left'}}>
                 <p><span style={{fontWeight: "bold"}}>Try out these claims!</span></p>
                 <ListGroup flush>
-                    <ListGroupItem action onClick={(e) => this.handleClick(1, e)}>Face masks can be steamed for reuse.</ListGroupItem>
-                    <ListGroupItem action onClick={(e) => this.handleClick(2, e)}>5G mobile networks do not spread COVID-19</ListGroupItem>
-                    <ListGroupItem action onClick={(e) => this.handleClick(3, e)}>Hydroxychloroquine (HCQ) can prevent COVID-19</ListGroupItem>
-                    <ListGroupItem action onClick={(e) => this.handleClick(4, e)}>Hypertension is a common comorbidity seen in COVID-19 patients</ListGroupItem>
+                    <ListGroupItem action style={{cursor: "pointer" }} onClick={(e) => this.handleClick(1, e)}>Face masks can be steamed for reuse.</ListGroupItem>
+                    <ListGroupItem action style={{cursor: "pointer" }} onClick={(e) => this.handleClick(2, e)}>5G mobile networks do not spread COVID-19</ListGroupItem>
+                    <ListGroupItem action style={{cursor: "pointer" }} onClick={(e) => this.handleClick(3, e)}>Hydroxychloroquine (HCQ) can prevent COVID-19</ListGroupItem>
+                    <ListGroupItem action style={{cursor: "pointer" }} onClick={(e) => this.handleClick(4, e)}>Hypertension is a common comorbidity seen in COVID-19 patients</ListGroupItem>
                 </ListGroup>
             </div>
         );

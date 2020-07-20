@@ -84,7 +84,7 @@ function LandingNavbar() {
               <NavItem>
                 <NavLink to="/model" tag={Link}>
                   <p className={textColor}>
-                    Our Model
+                    How it works
                   </p>
                 </NavLink>
               </NavItem>
