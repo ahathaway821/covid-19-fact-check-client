@@ -14,8 +14,10 @@ class Rating extends React.Component {
             let value;
             if (label === "true") {
                 value = 90;
-            } else {
+            } else if (label === "false") {
                 value = 10;
+            } else if (label === "partly false") {
+                value = 25;
             }
 
             return (
@@ -33,7 +35,7 @@ class Rating extends React.Component {
                             <Card style={{ height: '20rem' }}>
                                 <CardBody>
                                     <CardTitle><h3>Rating</h3></CardTitle>
-                                    <CardText><i>This claim was fact-checked by {source}</i></CardText> {/* TODO - conditionally show source */}
+                                    <CardText><i>This claim was fact-checked by <b style={{fontWeight: "bold"}}>{source}</b></i></CardText> {/* TODO - conditionally show source */}
                                     <center>
                                         <ReactSpeedometer
                                             height={250}
@@ -41,8 +43,8 @@ class Rating extends React.Component {
                                             maxValue={100}
                                             needleHeightRatio={0.6}
                                             value={value}
-                                            customSegmentStops={[0, 25, 75, 100]}
-                                            segmentColors={["#dc3545", "#ffc107", "#28a745"]}
+                                            customSegmentStops={[0, 20, 40, 60, 80, 100]}
+                                            segmentColors={["#dc3545", "#f06767", "#ffc107", "#9bd25c", "#28a745"]}
                                             currentValueText="Rating"
                                             customSegmentLabels={[
                                             {
@@ -51,7 +53,17 @@ class Rating extends React.Component {
                                                 color: "#000000",
                                             },
                                             {
+                                                text: "",
+                                                position: "OUTSIDE",
+                                                color: "#000000",
+                                            },
+                                            {
                                                 text: "Not enough evidence",
+                                                position: "OUTSIDE",
+                                                color: "#000000",
+                                            },
+                                            {
+                                                text: "",
                                                 position: "OUTSIDE",
                                                 color: "#000000",
                                             },
@@ -62,11 +74,11 @@ class Rating extends React.Component {
                                             },
                                             ]}
                                             ringWidth={25}
-                                            needleTransitionDuration={3333}
-                                            needleTransition="easeElastic"
+                                            needleTransitionDuration={1000}
+                                            // needleTransition="easeElastic"
                                             needleColor={"#a7ff83"}
                                             textColor={"#000000"}
-                                            labelFontSize={"13"}
+                                            labelFontSize={"10"}
                                         />
                                     </center>
                                 </CardBody>

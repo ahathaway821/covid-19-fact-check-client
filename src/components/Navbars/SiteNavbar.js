@@ -31,7 +31,7 @@ function SiteNavbar() {
               <NavItem>
                 <NavLink to="/model" tag={Link}>
                   <p className="text-muted">
-                    Our Model
+                    How it works
                   </p>
                 </NavLink>
               </NavItem>

@@ -62,6 +62,19 @@ class SimilarClaims extends React.Component {
             });
     }
 
+    // handleClick(val, e) {
+    //     console.log("claim is ", val);
+
+    //     this.props.history.push({
+    //         pathname: '/evaluate',
+    //         state: { 
+    //             claim: val.claim,
+    //             isValidatedClaim: true,
+    //             claimIndexResult: val
+    //         }
+    //     })
+    // }
+
     render() {
         let similarClaims;
         if (this.state.error !== null) {
@@ -81,6 +94,11 @@ class SimilarClaims extends React.Component {
                                 <CardBody>
                                     <CardTitle>
                                         <h4>{item.claim}</h4>
+                                        {/* <h4>
+                                            <CardLink style={{cursor: "pointer" }} onClick={(e) => this.handleClick(item, e)}>
+                                                {item.claim}
+                                            </CardLink>
+                                        </h4> */}
                                     </CardTitle>
                                     <CardText>
                                         <b>Explanation: </b>
