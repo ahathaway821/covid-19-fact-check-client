@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { Container, Row, Col, Button, Nav, NavItem, NavLink, TabContent, TabPane, Card, CardHeader, CardBody } from "reactstrap";
+import { addBackToTop } from 'vanilla-back-to-top'
 
 import DefaultFooter from "components/Footers/DefaultFooter";
 import Rating from "./Rating";
@@ -32,7 +33,11 @@ class Predict extends React.Component {
     }
 
     componentDidMount() {
+        console.log("comp did mount predict");
         window.scrollTo(0, 0);
+        addBackToTop({
+          cornerOffset: 20
+        });
     }
 
     setPills(pillNumber) {
@@ -77,7 +82,7 @@ class Predict extends React.Component {
             <div className="wrapper">
                 <Container 
                     fluid 
-                    className="sticky-top"           
+                    // className="sticky-top"           
                     >
                     <Row className="justify-content-md-center">
                         <Col md={{ size: 6, offset: 0 }}>
@@ -86,7 +91,7 @@ class Predict extends React.Component {
                                 onChangeValue={this.handleChangeValue}
                                 placeHolder={"Search for another COVID-19 claim"}
                                 onEnter={this.handlePredict}
-                                predictButton={this.predictButton}
+                                // predictButton={this.predictButton}
                             />
                         </Col>
                         <Col md="1">

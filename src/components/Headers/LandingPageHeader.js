@@ -27,13 +27,16 @@ function LandingPageHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/covid/covidImage3.jpg") + ")",
+            backgroundImage: "url(" + require("assets/img/covid/covidImage4.jpg") + ")",
           }}
           ref={pageHeader}
         ></div>
         <div className="content-center">
           <Container>
             <h1 className="title">Help stop the spread of <br /> COVID-19 Misinformation</h1>
+            <h5 className="description" style={{color: "white", fontWeight: "normal"}}>
+              We have collected over 10,000 claims from fact-checking organizations such as Poynter and Politifact as well as common FAQ’s from World Health Organization (WHO) and Centers for Disease Control and Prevention (CDC).
+            </h5>
           </Container>
         </div>
       </div>

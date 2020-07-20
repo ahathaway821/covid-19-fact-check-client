@@ -83,7 +83,7 @@ class OurRating extends React.Component {
                     <CardBody>
                         {/* <CardTitle><h3>Rating ({progressBarPercentage}% {ratingLabel})</h3></CardTitle> */}
                         <CardTitle><h3>Rating</h3></CardTitle>
-                        <CardText><i>This rating was predicted by <b style={{fontWeight: "bold"}}>our algorithm</b> ({Math.round(progressBarPercentage)}% {ratingLabel})</i></CardText>
+                        <CardText><i>This rating was predicted by <b style={{fontWeight: "bold"}}>our algorithm</b></i></CardText>
                         <center>
                             <ReactSpeedometer
                                 height={250}
@@ -91,8 +91,8 @@ class OurRating extends React.Component {
                                 maxValue={100}
                                 needleHeightRatio={0.6}
                                 value={value}
-                                customSegmentStops={[0, 30, 70, 100]}
-                                segmentColors={["#dc3545", "#ffc107", "#28a745"]}
+                                customSegmentStops={[0, 15, 30, 70, 85, 100]}
+                                segmentColors={["#dc3545", "#f06767", "#ffc107", "#9bd25c", "#28a745"]}
                                 currentValueText="COVIDFact Rating"
                                 customSegmentLabels={[
                                 {
@@ -101,7 +101,17 @@ class OurRating extends React.Component {
                                     color: "#000000",
                                 },
                                 {
+                                    text: "",
+                                    position: "OUTSIDE",
+                                    color: "#000000",
+                                },
+                                {
                                     text: "Not enough evidence",
+                                    position: "OUTSIDE",
+                                    color: "#000000",
+                                },
+                                {
+                                    text: "",
                                     position: "OUTSIDE",
                                     color: "#000000",
                                 },
@@ -112,8 +122,8 @@ class OurRating extends React.Component {
                                 },
                                 ]}
                                 ringWidth={25}
-                                needleTransitionDuration={3333}
-                                needleTransition="easeElastic"
+                                needleTransitionDuration={1000}
+                                // needleTransition="easeElastic"
                                 needleColor={"#a7ff83"}
                                 textColor={"#000000"}
                                 labelFontSize={"13"}
