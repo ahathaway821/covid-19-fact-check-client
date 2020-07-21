@@ -32,20 +32,19 @@ function LandingPage() {
       <LandingNavbar></LandingNavbar>
       <div className="wrapper">
         <LandingPageHeader />
-        <div className="section section-about-us">
-          <Container>
-            <Row>
-              <Col className="ml-auto mr-auto text-center" md="8">
-                <h2 className="title">Evaluate a COVID-19 Claim</h2>
-                {/* <h5 className="description">
-                  <i>"Here we would explain the types of claims we can evaluate"</i>
-                </h5> */}
-                <Home/>
-              </Col>
-            </Row>
-            <div className="separator separator-primary"></div>
-           </Container>
-        </div>
+        <br />
+        <Container>
+          <Row>
+            <Col className="ml-auto mr-auto text-center" md="8">
+              <h2 className="title">Evaluate a COVID-19 Claim</h2>
+              {/* <h5 className="description">
+                <i>Either select a previously fact-checked claim or a new one</i>
+              </h5> */}
+              <Home/>
+            </Col>
+          </Row>
+          <div className="separator separator-primary"></div>
+          </Container>
        <DefaultFooter />
       </div>
     </>

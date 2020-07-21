@@ -17,7 +17,39 @@ class Rating extends React.Component {
             } else if (label === "false") {
                 value = 10;
             } else if (label === "partly false") {
-                value = 25;
+                value = 30;
+            } else if (label === "partly true") {
+                value = 70;
+            } else {
+                value = 50;
+            }
+
+            let claimSource = claim_source.trim();
+            let factSource = source;
+            let factSourceURL = false;
+            let claimSourceURL = false;
+            let regexp =  /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+            
+            if (claimSource !== "") {
+                console.log("claimSource 2 ");
+                if(regexp.test(claimSource)) 
+                {
+                    console.log("claimSource 3");
+                    claimSourceURL = true;
+                }
+            } else {
+                claimSource = '';
+            }
+
+            if (factSource !== "") {
+                console.log("claimSource 2 ");
+                if(regexp.test(factSource)) 
+                {
+                    console.log("claimSource 3");
+                    factSourceURL = true;
+                }
+            } else {
+                factSource = '';
             }
 
             return (
@@ -78,7 +110,7 @@ class Rating extends React.Component {
                                             // needleTransition="easeElastic"
                                             needleColor={"#a7ff83"}
                                             textColor={"#000000"}
-                                            labelFontSize={"10"}
+                                            labelFontSize={"13"}
                                         />
                                     </center>
                                 </CardBody>
@@ -93,29 +125,44 @@ class Rating extends React.Component {
                                         <h3>More Details</h3>
                                     </CardTitle>
                                     <CardText>
-                                        <b>Explanation: </b>
-                                        <br />
-                                        {explanation ? explanation : "-"}
+                                        {explanation.trim() !== "" ? (
+                                            <div>
+                                                <b>Explanation: </b>
+                                                {explanation}
+                                            </div>
+                                        ): ""}
                                     </CardText>
                                     <CardText>
-                                        <b>Fact Check Date: </b>
-                                        <br />
-                                        {date !== "1970-01-01" ? date : "-"}
+                                        {date !== "1970-01-01" ? (
+                                            <div>
+                                                <b>Fact Check Date: </b>
+                                                {date}
+                                            </div>
+                                        ): ""}
                                     </CardText>
                                     <CardText>
-                                        <b>Fact Check URL: </b>
-                                        <br />
-                                        {fact_check_url ? <a href={fact_check_url}>{fact_check_url}</a> : "-"}
+                                        {fact_check_url ? (
+                                            <div>
+                                                <b>Fact Check URL: </b>
+                                                <a href={fact_check_url}>{fact_check_url}</a>
+                                            </div>
+                                        ): ""}
                                     </CardText>
                                     <CardText>
-                                        <b>Fact Check Organization: </b>
-                                        <br />
-                                        {source ? <a href={source}>{source}</a> : "-"}
+                                        {factSource !== "" ? (
+                                            <div>
+                                                <b>Fact Check Organization: </b>
+                                                {factSourceURL ? <a href={factSource}>{factSource}</a> : factSource}
+                                            </div>
+                                        ): ""}
                                     </CardText>
                                     <CardText>
-                                        <b>Source of Claim: </b>
-                                        <br />
-                                        {claim_source.trim() ? <a href={claim_source}>{claim_source}</a> : "-"}
+                                        {claimSource !== "" ? (
+                                            <div>
+                                                <b>Source of Claim: </b>
+                                                {claimSourceURL ? <a href={claimSource}>{claimSource}</a> : claimSource}
+                                            </div>
+                                        ): ""}
                                     </CardText>
                                 </CardBody>
                             </Card>

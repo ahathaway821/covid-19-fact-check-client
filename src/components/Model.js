@@ -110,7 +110,7 @@ class Model extends React.Component {
                             <img
                                 alt="..."
                                 className="img-fluid img-raised"
-                                src={require("assets/img/architecture.png")}
+                                src={require("assets/img/architecture.jpg")}
                                 >
                             </img>
                         </Col>

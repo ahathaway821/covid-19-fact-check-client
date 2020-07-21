@@ -33,7 +33,8 @@
     "react-show-more-text": "^1.4.2",
     "reactstrap": "8.4.1",
     "reactstrap-typeahead": "^1.0.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "vanilla-back-to-top": "^7.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

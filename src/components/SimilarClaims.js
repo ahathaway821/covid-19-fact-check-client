@@ -96,6 +96,43 @@ class SimilarClaims extends React.Component {
             if (this.state.isLoaded) {
                 this.state.items.similar_claims.sort((a, b) => (a.cosine_dist > b.cosine_dist) ? 1 : -1)
                 similarClaims = this.state.items.similar_claims.slice(1,).map((item, key) => {
+                    let claimSource = item.claim_source.trim();
+                    let factSource = item.source;
+                    let factSourceURL = false;
+                    let claimSourceURL = false;
+                    let regexp =  /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+                    
+                    if (claimSource !== "") {
+                        console.log("claimSource 2 ");
+                        if(regexp.test(claimSource)) 
+                        {
+                            console.log("claimSource 3");
+                            claimSourceURL = true;
+                        }
+                    } else {
+                        claimSource = '';
+                    }
+
+                    if (factSource !== "") {
+                        console.log("claimSource 2 ");
+                        if(regexp.test(factSource)) 
+                        {
+                            console.log("claimSource 3");
+                            factSourceURL = true;
+                        }
+                    } else {
+                        factSource = '';
+                    }
+
+                    let ratingColor;
+                    if (item.label === "false" || item.label === "partly false") {
+                        ratingColor = "danger";
+                    } else if (item.label === "true" || item.label === "partly true") {
+                        ratingColor = "success";
+                    } else {
+                        ratingColor = "warning";
+                    }
+
                     return (
                         <div key={item.claim}>
                             <Card>
@@ -104,31 +141,63 @@ class SimilarClaims extends React.Component {
                                         <h4>{item.claim}</h4>
                                     </CardTitle>
                                     <CardText>
-                                        <b>Explanation: </b>
-                                        <ShowMoreText
-                                            lines={3}
-                                            more='Show more'
-                                            less='Show less'
-                                            anchorClass=''
-                                            onClick={this.executeOnClick}
-                                            expanded={false}
-                                        >
-                                            {item.explanation}
-                                        </ShowMoreText>
+                                        {item.explanation.trim() !== "" ? (
+                                            <div>
+                                                <b>Explanation: </b>
+                                                <ShowMoreText
+                                                    lines={3}
+                                                    more='Show more'
+                                                    less='Show less'
+                                                    anchorClass=''
+                                                    onClick={this.executeOnClick}
+                                                    expanded={false}
+                                                >
+                                                    {item.explanation}
+                                                </ShowMoreText>
+                                            </div>
+                                        ): ""}
                                     </CardText>
                                     <CardText>
-                                        <b>Fact Check Date</b> : {item.date}
+                                        {item.date !== "1970-01-01" && item.date.trim() !== "" ? (
+                                            <div>
+                                                <b>Fact Check Date: </b> {item.date}
+                                            </div>
+                                        ): ""}
                                     </CardText>
                                     <CardText>
-                                        <b>Fact Check URL</b> : <CardLink href={item.fact_check_url} target="_blank">{item.fact_check_url}</CardLink>
+                                        {item.fact_check_url ? (
+                                            <div>
+                                                <b>Fact Check URL: </b>
+                                                <a href={item.fact_check_url}>{item.fact_check_url}</a>
+                                            </div>
+                                        ): ""}
                                     </CardText>
                                     <CardText>
+                                        {factSource !== "" ? (
+                                            <div>
+                                                <b>Fact Check Organization: </b>
+                                                {factSourceURL ? <a href={factSource}>{factSource}</a> : factSource}
+                                            </div>
+                                        ): ""}
+                                    </CardText>
+                                    {/* <CardText>
                                         <b>Fact Checked by</b> : {item.source}
-                                    </CardText>
+                                    </CardText> */}
                                     <CardText>
-                                        <b>Source of Claim</b> : {item.claim_source}
+                                        {claimSource !== "" ? (
+                                            <div>
+                                                <b>Source of Claim: </b>
+                                                {claimSourceURL ? <a href={claimSource}>{claimSource}</a> : claimSource}
+                                            </div>
+                                        ): ""}
                                     </CardText>
-                                    {item.label.includes('false') ? (
+                                    {/* <CardText>
+                                        <b>Source of Claim</b> : {item.claim_source}
+                                    </CardText> */}
+                                    <CardText>
+                                        <b>Rating</b> : <Badge color={ratingColor}>{item.label.charAt(0).toUpperCase() + item.label.slice(1)}</Badge>
+                                    </CardText>
+                                    {/* {item.label.includes('false') ? (
                                         <CardText>
                                             <b>Rating</b> : <Badge color="danger">{item.label.charAt(0).toUpperCase() + item.label.slice(1)}</Badge>
                                         </CardText>

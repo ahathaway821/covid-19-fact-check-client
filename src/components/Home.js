@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { Button } from "reactstrap";
+import { Row, Col, Image, Button, Container } from "reactstrap";
 import ShowMoreText from 'react-show-more-text';
 
 import ClaimSearch from "./ClaimSearch";
@@ -62,7 +62,25 @@ class Home extends React.Component {
                         <Image src={logo} width={350} height={350} rounded />
                     </Col>
                 </Row> */}
-                <ClaimSearch 
+                <Container fluid>
+                    <Row className="justify-content-md-center">
+                        <Col md={{ size: 10, offset: 0 }}>
+                            <ClaimSearch 
+                                onSelectedValue={this.handleSelectedValue} 
+                                onChangeValue={this.handleChangeValue}
+                                onEnter={this.handlePredict}
+                                placeHolder={"Search for a COVID-19 Claim"}
+                            />
+                        </Col>
+                        <Col md="2">
+                            <Button  
+                                className="btn-round"
+                                color="info" 
+                                onClick={this.handlePredict}>Evaluate</Button>
+                        </Col>
+                    </Row>
+                </Container>
+                {/* <ClaimSearch 
                     onSelectedValue={this.handleSelectedValue} 
                     onChangeValue={this.handleChangeValue}
                     onEnter={this.handlePredict}
@@ -73,7 +91,7 @@ class Home extends React.Component {
                     <Button
                         color="info" 
                         onClick={this.handlePredict}>Evaluate</Button>
-                </div>
+                </div> */}
                 <br />
                 <PopularClaims />
                 <br />
@@ -89,7 +107,7 @@ class Home extends React.Component {
                             onClick={this.executeOnClick}
                             expanded={false}
                         >
-                            The information contained herein should be used as a substitute for the advice of an appropriately qualified and licensed physician or other health care provider. The tool is not a substitute for the care provided by licensed healthcare practitioners and consumers are urged to consult with their healthcare practitioner in all instances. Although we attempt to provide accurate and up-to-date information, no guarantee is made to that effect. This tool does not endorse any medications, diagnose patients, or recommend therapy. 
+                            The information contained herein should NOT be used as a substitute for the advice of an appropriately qualified and licensed physician or other health care provider. The tool is not a substitute for the care provided by licensed healthcare practitioners and consumers are urged to consult with their healthcare practitioner in all instances. Although we attempt to provide accurate and up-to-date information, no guarantee is made to that effect. This tool does not endorse any medications, diagnose patients, or recommend therapy. 
                         </ShowMoreText>
                     </blockquote>
                 </div>
