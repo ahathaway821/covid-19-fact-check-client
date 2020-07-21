@@ -33,7 +33,7 @@ const searchClaims = (query) => {
         },
         "sort": ["_score", {"date": "desc"}]
     }, config)
-    .then(res => {
+    .then(res => {  
         const body = isLocal ? res.data : JSON.parse(res.data.body)
         const results = body.hits.hits.map((i) => ({
             claim: i._source.claim,
@@ -44,7 +44,8 @@ const searchClaims = (query) => {
             clean_claim: i._source.clean_claim,
             source: i._source.source,
             source_label: i._source.source_label,
-            fact_check_url: i._source.fact_check_url
+            fact_check_url: i._source.fact_check_url,
+            relevance_score: i._score
         }));
 
         return results;

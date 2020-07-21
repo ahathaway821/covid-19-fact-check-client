@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Card, CardTitle, CardBody, CardText, Spinner } from "reactstrap";
 import ReactSpeedometer from "react-d3-speedometer"
 
+import searchClaims from 'shared/searchClaims';
+
 const modelVersions = {
     'bert-cnn': 'bert-cnn',
     'bert-cnn-with-summarizer': 'bert-cnn-summ'
@@ -61,6 +63,11 @@ class OurRating extends React.Component {
                     error
                 });
             });
+        
+        searchClaims(claim)
+            .then(res => {
+                console.log('Elasticsearch top score: ' + res[0].relevance_score)
+            })
     }
 
     componentDidMount() {

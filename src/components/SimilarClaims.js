@@ -64,6 +64,7 @@ class SimilarClaims extends React.Component {
                         isLoaded: true,
                         items: result.data
                     });
+                    console.log('Closest result: ' + result.data.similar_claims[0].cosine_dist)
                 },
                 (error) => {
                     console.log("error is ", error);

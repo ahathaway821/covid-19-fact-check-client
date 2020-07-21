@@ -59,33 +59,20 @@ class About extends React.Component {
                                                 <img
                                                     alt="..."
                                                     className="rounded-circle img-fluid img-raised"
-                                                    src={require("assets/img/julie.jpg")}
+                                                    src={require("assets/img/team/angel.jpeg")}
                                                     >
                                                 </img>
                                                 <h4 className="title">Angel Chen</h4>
                                                 <p className="category text-info">Software Engineer</p>
                                                 <p className="text-muted">
-                                                You can write here details about one of your team members.
-                                                You can give more details about what they do. Feel free to
-                                                add some{" "}
-                                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                                    links
-                                                </a>{" "}
-                                                for people to be able to follow them outside the site.
+                                                Angel works as a Software Engineer at Apple’s Cloud Services organization where she develops and maintains data ETL pipelines and analytics platform backed by Spark.
+                                                {" "}
                                                 </p>
+                                                <br />
                                                 <Button
                                                 className="btn-icon btn-round"
                                                 color="info"
-                                                href="#pablo"
-                                                onClick={(e) => e.preventDefault()}
-                                                >
-                                                <i className="fab fa-twitter"></i>
-                                                </Button>
-                                                <Button
-                                                className="btn-icon btn-round"
-                                                color="info"
-                                                href="#pablo"
-                                                onClick={(e) => e.preventDefault()}
+                                                href="http://linkedin.com/in/chenanqi/"
                                                 >
                                                 <i className="fab fa-linkedin"></i>
                                                 </Button>
@@ -109,6 +96,7 @@ class About extends React.Component {
                                                 </a>{" "}
                                                 for people to be able to follow them outside the site.
                                                 </p>
+                                                <br />
                                                 <Button
                                                 className="btn-icon btn-round"
                                                 color="info"
