@@ -59,7 +59,7 @@ class About extends React.Component {
                                                 <img
                                                     alt="..."
                                                     className="rounded-circle img-fluid img-raised"
-                                                    src={require("assets/img/team/angel.jpeg")}
+                                                    src={require("assets/img/team/angel.jpg")}
                                                     >
                                                 </img>
                                                 <h4 className="title">Angel Chen</h4>
