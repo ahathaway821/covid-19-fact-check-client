@@ -26,7 +26,8 @@ class SimilarClaims extends React.Component {
         }
     }
 
-    viewSimilarClaim(claim) {
+    viewSimilarClaim(claim, e) {
+        e.preventDefault();
         // console.log("viewSimilarClaim claim ", claim);
         searchClaims(claim)
             .then(val => {
@@ -38,12 +39,11 @@ class SimilarClaims extends React.Component {
         
                 const selectedClaim = val[0].claim;
 
-                // console.log("view similar claim val ", val);
-                // console.log("view similar claim selectedClaim ", selectedClaim);
                 this.props.history.push({
                     pathname: '/evaluate',
                     state: { claimIndexResult: val, claim: selectedClaim, isValidatedClaim: true }
                 })
+                window.scrollTo(0, 0)
                 window.location.reload();
             })
     }
@@ -207,7 +207,7 @@ class SimilarClaims extends React.Component {
                                         </CardText>
                                     )} */}
                                      <CardText>
-                                         <CardLink href="/evaluate" onClick={() => this.viewSimilarClaim(item.claim)}>
+                                         <CardLink href="/evaluate" onClick={(e) => this.viewSimilarClaim(item.claim, e)}>
                                         Learn more
                                         </CardLink>
                                     </CardText>
