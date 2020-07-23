@@ -27,6 +27,7 @@ class SimilarClaims extends React.Component {
     }
 
     viewSimilarClaim(claim) {
+        // console.log("viewSimilarClaim claim ", claim);
         searchClaims(claim)
             .then(val => {
                 console.log('result')
@@ -36,6 +37,9 @@ class SimilarClaims extends React.Component {
                 console.log('past')
         
                 const selectedClaim = val[0].claim;
+
+                // console.log("view similar claim val ", val);
+                // console.log("view similar claim selectedClaim ", selectedClaim);
                 this.props.history.push({
                     pathname: '/evaluate',
                     state: { claimIndexResult: val, claim: selectedClaim, isValidatedClaim: true }
@@ -103,10 +107,8 @@ class SimilarClaims extends React.Component {
                     let regexp =  /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
                     
                     if (claimSource !== "") {
-                        console.log("claimSource 2 ");
                         if(regexp.test(claimSource)) 
                         {
-                            console.log("claimSource 3");
                             claimSourceURL = true;
                         }
                     } else {
@@ -114,10 +116,8 @@ class SimilarClaims extends React.Component {
                     }
 
                     if (factSource !== "") {
-                        console.log("claimSource 2 ");
                         if(regexp.test(factSource)) 
                         {
-                            console.log("claimSource 3");
                             factSourceURL = true;
                         }
                     } else {
@@ -205,9 +205,9 @@ class SimilarClaims extends React.Component {
                                         <CardText>
                                             <b>Rating</b> : <Badge color="success">{item.label.charAt(0).toUpperCase() + item.label.slice(1)}</Badge>
                                         </CardText>
-                                    )}
+                                    )} */}
                                      <CardText>
-                                         <CardLink href="" onClick={() => this.viewSimilarClaim(item.claim)}>
+                                         <CardLink href="/evaluate" onClick={() => this.viewSimilarClaim(item.claim)}>
                                         Learn more
                                         </CardLink>
                                     </CardText>
