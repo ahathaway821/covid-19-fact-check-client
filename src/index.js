@@ -20,17 +20,17 @@ import NoMatch from "components/NoMatch.js";
 import Model from "components/Model.js";
 
 ReactDOM.render(
-  <React.Fragment>
-      <BrowserRouter>
-        <Switch>
-						<Route exact path="/" component={LandingPage} />
-						<Route path="/about" component={About} />
-						<Route path="/contact" component={Contact} />
-						<Route path="/model" component={Model} />
-						<Route path="/evaluate" component={Predict} />
-						<Route component={NoMatch} />
-        </Switch>
-      </BrowserRouter>
-  </React.Fragment>,
-  document.getElementById("root")
+	<React.Fragment>
+		<BrowserRouter>
+			<Switch>
+				<Route exact path="/" component={LandingPage} />
+				<Route path="/about" component={About} />
+				<Route path="/contact" component={Contact} />
+				<Route path="/model" component={Model} />
+				<Route path="/evaluate" component={Predict} />
+				<Route component={NoMatch} />
+			</Switch>
+	  	</BrowserRouter>
+  	</React.Fragment>,
+  	document.getElementById("root")
 );
