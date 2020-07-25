@@ -2,11 +2,9 @@ import React from "react";
 import { Container } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import { Row, Col, Button } from "reactstrap";
-import LandingNavbar from "components/Navbars/LandingNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
-import DefaultFooter from "components/Footers/DefaultFooter.js";
-
-// import logo from "../img/covidImage.jpg";
+import LandingNavbar from "components/LandingNavbar.js";
+import LandingPageHeader from "components/LandingPageHeader.js";
+import DefaultFooter from "components/DefaultFooter.js";
 
 class About extends React.Component {
     componentDidMount() {
@@ -176,9 +174,9 @@ class About extends React.Component {
                                     </Row>
                                 </div>
                             </Container>
-                        </div>
-                    </Container>
-                </div>
+                            </div>
+                        </Container>
+                    </div>
                 <DefaultFooter />
             </div>
             </>

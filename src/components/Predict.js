@@ -3,16 +3,14 @@ import { withRouter } from "react-router-dom";
 import { Container, Row, Col, Button, Nav, NavItem, NavLink, TabContent, TabPane, Card, CardHeader, CardBody } from "reactstrap";
 import { addBackToTop } from 'vanilla-back-to-top'
 
-import DefaultFooter from "components/Footers/DefaultFooter";
+import DefaultFooter from "components/DefaultFooter";
 import Rating from "./Rating";
 import ClaimSearch from "./ClaimSearch";
 import SimilarClaims from "./SimilarClaims";
 import ResearchPapers from "./ResearchPapers";
-import SiteNavbar from "components/Navbars/SiteNavbar";
+import SiteNavbar from "components/SiteNavbar";
 import Feedback from './Feedback';
 import { submitFeedback, feedbackTypes } from "../shared/submitFeedback";
-
-//import '../App.css';
 
 class Predict extends React.Component {
     constructor(props) {

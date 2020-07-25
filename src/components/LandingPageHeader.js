@@ -4,7 +4,6 @@ import React from "react";
 import { Container } from "reactstrap";
 
 // core components
-
 function LandingPageHeader() {
   let pageHeader = React.createRef();
 

@@ -8,10 +8,9 @@ import {
 } from "reactstrap";
 
 // core components
-import LandingNavbar from "components/Navbars/LandingNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
-import DefaultFooter from "components/Footers/DefaultFooter.js";
-
+import LandingNavbar from "components/LandingNavbar.js";
+import LandingPageHeader from "components/LandingPageHeader.js";
+import DefaultFooter from "components/DefaultFooter.js";
 import Home from "components/Home.js";
 
 function LandingPage() {

@@ -5,7 +5,7 @@ import ShowMoreText from 'react-show-more-text';
 
 import ClaimSearch from "./ClaimSearch";
 import PopularClaims from "./PopularClaims";
-
+import About from "./About";
 import { submitFeedback, feedbackTypes } from "../shared/submitFeedback";
 
 import 'react-bootstrap-typeahead/css/Typeahead.css';

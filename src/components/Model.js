@@ -2,9 +2,9 @@ import React from "react";
 import { Container } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import { Row, Col, Card, CardText, CardBody, CardTitle, CardLink } from "reactstrap";
-import LandingNavbar from "components/Navbars/LandingNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
-import DefaultFooter from "components/Footers/DefaultFooter.js";
+import LandingNavbar from "components/LandingNavbar.js";
+import LandingPageHeader from "components/LandingPageHeader.js";
+import DefaultFooter from "components/DefaultFooter.js";
 
 // import logo from "../img/covidImage.jpg";
 

@@ -2,11 +2,9 @@ import React, { useEffect } from "react";
 import { Container } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import { Row, Col, InputGroup, InputGroupAddon, InputGroupText, Input, Button } from "reactstrap";
-import LandingNavbar from "components/Navbars/LandingNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
-import DefaultFooter from "components/Footers/DefaultFooter.js";
-
-// import logo from "../img/covidImage.jpg";
+import LandingNavbar from "components/LandingNavbar.js";
+import LandingPageHeader from "components/LandingPageHeader.js";
+import DefaultFooter from "components/DefaultFooter.js";
 
 function Contact() {
     const [firstFocus, setFirstFocus] = React.useState(false);
@@ -21,7 +19,7 @@ function Contact() {
         <LandingNavbar></LandingNavbar>
         <div className="wrapper">
             <LandingPageHeader />
-            <div className="section section-contact-us text-center">
+            <div className="section section-about-us text-center">
                 <Container>
                     <h2 className="title">Contact Us</h2>
                     <h5 className="text-muted">Please let us know if you have any questions or comments for us</h5>

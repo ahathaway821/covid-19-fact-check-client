@@ -5,7 +5,6 @@ export { default as Header } from './Header';
 export { default as Home } from './Home';
 export { default as Layout } from './Layout';
 export { default as NoMatch } from './NoMatch';
-export { default as Data } from './Data';
 export { default as Model } from './Model';
 export { default as Predict } from './Predict';
 export { default as PopularClaims } from './PopularClaims';

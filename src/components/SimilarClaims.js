@@ -43,8 +43,8 @@ class SimilarClaims extends React.Component {
                     pathname: '/evaluate',
                     state: { claimIndexResult: val, claim: selectedClaim, isValidatedClaim: true }
                 })
-                window.scrollTo(0, 0)
                 window.location.reload();
+                window.scrollTo(0, 0)
             })
     }
 

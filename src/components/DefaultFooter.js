@@ -5,7 +5,6 @@ import React from "react";
 import { Container } from "reactstrap";
 
 // core components
-
 function DefaultFooter() {
   return (
     <>

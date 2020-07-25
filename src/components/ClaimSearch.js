@@ -1,12 +1,8 @@
 import React from "react";
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
-
-// require('dotenv').config()
-import 'react-bootstrap-typeahead/css/Typeahead.css';
-
 import searchClaims from '../shared/searchClaims';
 
-
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 class ClaimSearch extends React.Component {
     constructor(props) {
