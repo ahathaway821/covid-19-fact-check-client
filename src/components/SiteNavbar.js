@@ -22,21 +22,21 @@ function SiteNavbar() {
 						</NavLink>
 					</NavItem>
 					<NavItem>
-						<NavLink to="/about" tag={Link}>
+						<NavLink to="/" tag={Link}>
 							<p className="">
 								About
 							</p>
 						</NavLink>
 					</NavItem>
 					<NavItem>
-						<NavLink to="/model" tag={Link}>
+						<NavLink to="/" tag={Link}>
 							<p className="">
 								How it works
 							</p>
 						</NavLink>
 					</NavItem>
 					<NavItem>
-						<NavLink to="/contact" tag={Link}>
+						<NavLink to="/" tag={Link}>
 							<p className="">
 								Contact Us
 							</p>
