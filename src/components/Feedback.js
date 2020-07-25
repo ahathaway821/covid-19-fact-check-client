@@ -1,66 +1,80 @@
 import React from "react";
-import { Card, CardBody, CardTitle, CardText, Button, Modal, Form, ModalBody, ModalHeader, ModalFooter, FormGroup, Input, Label } from "reactstrap";
+import { 
+	Card, 
+	CardBody, 
+	CardTitle, 
+	CardText, 
+	Button, 
+	Modal, 
+	Form, 
+	ModalBody, 
+	ModalHeader, 
+	ModalFooter, 
+	FormGroup, 
+	Input, 
+	Label 
+} from "reactstrap";
 
 import { submitFeedback, feedbackTypes } from "../shared/submitFeedback";
 
 class Feedback extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showYes: false,
-            showNo: false,
-            isLabelCorrect: false,
-            isLoaded: false,
-            error: null,
-            showModal: false
-        };
-        this.handleShowModal = this.handleShowModal.bind(this);
-        this.handleCloseModal = this.handleCloseModal.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmitFeedback = this.handleSubmitFeedback.bind(this);
-    }
+	constructor(props) {
+		super(props);
+		this.state = {
+			showYes: false,
+			showNo: false,
+			isLabelCorrect: false,
+			isLoaded: false,
+			error: null,
+			showModal: false
+		};
+		this.handleShowModal = this.handleShowModal.bind(this);
+		this.handleCloseModal = this.handleCloseModal.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmitFeedback = this.handleSubmitFeedback.bind(this);
+	}
 
-    handleShowModal(isLabelCorrect) {
-        this.setState({ showModal: true, isLabelCorrect: isLabelCorrect });
-    }
+	handleShowModal(isLabelCorrect) {
+		this.setState({ showModal: true, isLabelCorrect: isLabelCorrect });
+	}
 
-    handleCloseModal() {
-        this.setState({ showModal: false });
-    }
+	handleCloseModal() {
+		this.setState({ showModal: false });
+	}
 
-    getLabel() {
-        return this.state.isLabelCorrect ? 'Yes' : 'No';
-    }
+	getLabel() {
+		return this.state.isLabelCorrect ? 'Yes' : 'No';
+	}
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
-      }
+	handleChange(event) {
+		this.setState({value: event.target.value});
+	  }
 
 
-    handleSubmitFeedback() {
-        this.setState({isLoaded: false, error: null});
-        submitFeedback(
-            this.props.claim, 
-            this.props.isValidatedClaim, 
-            feedbackTypes.userFeedback, 
-            this.state.reasoning ?? '', 
-            this.state.isLabelCorrect)
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                    });
-                    this.handleCloseModal();
-                }
-            )
-            .catch(error => {
-                console.log(error.response);
-                this.setState({
-                    isLoaded: true,
-                    error
-                });
-            });
-    }
+	handleSubmitFeedback() {
+		this.setState({isLoaded: false, error: null});
+		submitFeedback(
+			this.props.claim, 
+			this.props.isValidatedClaim, 
+			feedbackTypes.userFeedback, 
+			this.state.reasoning ?? '', 
+			this.state.isLabelCorrect)
+			.then(
+				(result) => {
+					this.setState({
+						isLoaded: true,
+					});
+					this.handleCloseModal();
+				}
+			)
+			.catch(error => {
+				console.log(error.response);
+				this.setState({
+					isLoaded: true,
+					error
+				});
+			});
+	}
 
     render() {
         return (
@@ -115,7 +129,7 @@ class Feedback extends React.Component {
         </>
         )
 
-    }    
+	}    
 }
 
 export default Feedback;

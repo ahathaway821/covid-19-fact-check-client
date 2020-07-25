@@ -2,19 +2,14 @@ import React, { useEffect } from "react";
 import { Container } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import { Row, Col, InputGroup, InputGroupAddon, InputGroupText, Input, Button } from "reactstrap";
-import LandingNavbar from "components/Navbars/LandingNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
-import DefaultFooter from "components/Footers/DefaultFooter.js";
-
-// import logo from "../img/covidImage.jpg";
 
 function Contact() {
-    const [firstFocus, setFirstFocus] = React.useState(false);
-    const [lastFocus, setLastFocus] = React.useState(false);
+	const [firstFocus, setFirstFocus] = React.useState(false);
+	const [lastFocus, setLastFocus] = React.useState(false);
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 
     return (
         <>

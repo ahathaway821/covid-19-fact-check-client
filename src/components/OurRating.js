@@ -23,32 +23,32 @@ class OurRating extends React.Component {
             closestSimilarClaimScore: 0
         };
 
-        this.threshold = .5;
-    }
+		this.threshold = .5;
+	}
 
-    getConfidenceLevel = (score, threshold) => {
-        const truthfulPercentage = +(score * 100).toFixed(2);
-        if (score > threshold) {
-            return truthfulPercentage
-        }
-        else {
-            return 100 - truthfulPercentage;
-        }
-    }
+	getConfidenceLevel = (score, threshold) => {
+		const truthfulPercentage = +(score * 100).toFixed(2);
+		if (score > threshold) {
+			return truthfulPercentage
+		}
+		else {
+			return 100 - truthfulPercentage;
+		}
+	}
 
-    getRatingLabel = (score, threshold) => {
-        return score > threshold ? "True" : "False";
-    }
+	getRatingLabel = (score, threshold) => {
+		return score > threshold ? "True" : "False";
+	}
 
-    getProgressBarVariant = (score, threshold) => {
-        return score > threshold ? "success" : "danger";
-    }
+	getProgressBarVariant = (score, threshold) => {
+		return score > threshold ? "success" : "danger";
+	}
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.claim !== this.props.claim) {
-            this.getPredictionRating(this.props.claim);
-        }
-    }
+	componentDidUpdate(prevProps) {
+		if (prevProps.claim !== this.props.claim) {
+			this.getPredictionRating(this.props.claim);
+		}
+	}
 
     getPredictionRating(claim) {
         this.setState({isLoaded: false, error: null, similarScoreLoaded: false, closestSimilarClaimScore: 0})
@@ -80,9 +80,9 @@ class OurRating extends React.Component {
             )
     }
 
-    componentDidMount() {
-        this.getPredictionRating(this.props.claim)
-    }
+	componentDidMount() {
+		this.getPredictionRating(this.props.claim)
+	}
 
     render() {
         if (this.state.isLoaded === true && this.state.isSimilarScoreLoaded) {
@@ -164,15 +164,15 @@ class OurRating extends React.Component {
             );
         }
 
-        return  (
-            <div>
-                <br />
-                <center>
-                    <Spinner animation="border" variant="secondary"/>
-                </center>
-            </div>
-        );
-    }    
+		return  (
+			<div>
+				<br />
+				<center>
+					<Spinner animation="border" variant="secondary"/>
+				</center>
+			</div>
+		);
+	}    
 }
 
 
