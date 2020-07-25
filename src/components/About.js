@@ -16,9 +16,8 @@ class About extends React.Component {
     render() {
         return (
             <>
-            <LandingNavbar></LandingNavbar>
-            <div className="wrapper">
-                <LandingPageHeader />
+            <div className="wrapper" id="about-section">
+
                 <div className="section section-about-us">
                     <Container>
                         <Row>
@@ -179,7 +178,6 @@ class About extends React.Component {
                         </div>
                     </Container>
                 </div>
-                <DefaultFooter />
             </div>
             </>
         );

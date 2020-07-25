@@ -18,9 +18,7 @@ function Contact() {
 
     return (
         <>
-        <LandingNavbar></LandingNavbar>
-        <div className="wrapper">
-            <LandingPageHeader />
+        <div className="wrapper" id="contact-section">
             <div className="section section-contact-us text-center">
                 <Container>
                     <h2 className="title">Contact Us</h2>
@@ -87,7 +85,6 @@ function Contact() {
                     </Row>
                 </Container>
             </div>
-            <DefaultFooter />
         </div>
         </>
     );

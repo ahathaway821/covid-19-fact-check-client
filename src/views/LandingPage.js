@@ -13,6 +13,9 @@ import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 import Home from "components/Home.js";
+import Model from "../components/Model";
+import About from "../components/About";
+import Contact from "../components/Contact";
 
 function LandingPage() {
   React.useEffect(() => {
@@ -37,6 +40,7 @@ function LandingPage() {
           <Row>
             <Col className="ml-auto mr-auto text-center" md="8">
               <h2 className="title">Evaluate a COVID-19 Claim</h2>
+              <p>Pick a manually fact-checked claim from the dropdown or type in a custom claim for our algorithm to evaluate </p>
               {/* <h5 className="description">
                 <i>Either select a previously fact-checked claim or a new one</i>
               </h5> */}
@@ -44,8 +48,11 @@ function LandingPage() {
             </Col>
           </Row>
           <div className="separator separator-primary"></div>
+
           </Container>
-       <DefaultFooter />
+       <About />
+       <Model />
+       <Contact />
       </div>
     </>
   );

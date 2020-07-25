@@ -1,21 +1,26 @@
 import React from "react";
 import axios from 'axios';
-import { Card, CardTitle, CardBody, CardText, Spinner } from "reactstrap";
+import { Card, CardHeader, CardTitle, CardBody, CardText, Spinner } from "reactstrap";
 import ReactSpeedometer from "react-d3-speedometer"
 
-import searchClaims from 'shared/searchClaims';
+import getSimilarClaims from 'shared/getSimilarClaims';
 
 const modelVersions = {
     'bert-cnn': 'bert-cnn',
-    'bert-cnn-with-summarizer': 'bert-cnn-summ'
+    'bert-cnn-with-summarizer': 'bert-cnn-summ',
+    'bert-cnn-similar': 'bert-cnn-similar'
 }
+
+const minCosineDistance = .5;
 
 class OurRating extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isLoaded: false,
-            score: 0
+            score: 0,
+            isSimilarScoreLoaded: false,
+            closestSimilarClaimScore: 0
         };
 
         this.threshold = .5;
@@ -46,8 +51,8 @@ class OurRating extends React.Component {
     }
 
     getPredictionRating(claim) {
-        this.setState({isLoaded: false, error: null})
-        axios.get(`https://eqx0uj4n69.execute-api.us-west-2.amazonaws.com/dev/${modelVersions["bert-cnn-with-summarizer"]}?claim=${this.props.claim}`)
+        this.setState({isLoaded: false, error: null, similarScoreLoaded: false, closestSimilarClaimScore: 0})
+        axios.get(`https://eqx0uj4n69.execute-api.us-west-2.amazonaws.com/dev/${modelVersions["bert-cnn-similar"]}?claim=${this.props.claim}`)
             .then(
                 (result) => {
                     this.setState({
@@ -64,10 +69,15 @@ class OurRating extends React.Component {
                 });
             });
         
-        searchClaims(claim)
-            .then(res => {
-                console.log('Elasticsearch top score: ' + res[0].relevance_score)
-            })
+        getSimilarClaims(claim)
+            .then(
+                result => {
+                    this.setState({
+                        isSimilarScoreLoaded: true,
+                        closestSimilarClaimScore: result.data.similar_claims[0].cosine_dist
+                    })
+                }
+            )
     }
 
     componentDidMount() {
@@ -75,7 +85,21 @@ class OurRating extends React.Component {
     }
 
     render() {
-        if (this.state.isLoaded === true) {
+        if (this.state.isLoaded === true && this.state.isSimilarScoreLoaded) {
+
+            if (this.state.closestSimilarClaimScore > minCosineDistance) {
+                return (
+                    <Card style={{ height: '20rem' }} initiallyExpanded={false}>
+                    <CardBody>
+                        <CardHeader 
+                            showExpandableButton={true}
+                            actAsExpander={true}/>
+                        <CardTitle><h3>Rating</h3></CardTitle>
+                        <CardText>Our algorithm does not have enough relevant evidence to evaluate your claim at this time.</CardText>
+                    </CardBody>
+                </Card>)
+            }
+
             let progressBarPercentage = this.getConfidenceLevel(this.state.score, this.threshold)
             const ratingLabel = this.getRatingLabel(this.state.score, this.threshold);
 
@@ -88,7 +112,6 @@ class OurRating extends React.Component {
             return (
                 <Card style={{ height: '20rem' }}>
                     <CardBody>
-                        {/* <CardTitle><h3>Rating ({progressBarPercentage}% {ratingLabel})</h3></CardTitle> */}
                         <CardTitle><h3>Rating</h3></CardTitle>
                         <CardText><i>This rating was predicted by <b style={{fontWeight: "bold"}}>our algorithm</b></i></CardText>
                         <center>

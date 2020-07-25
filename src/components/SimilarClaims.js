@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import ShowMoreText from 'react-show-more-text';
 
 import searchClaims from 'shared/searchClaims';
+import getSimilarClaims from 'shared/getSimilarClaims';
 
 class SimilarClaims extends React.Component {
     constructor(props) {
@@ -61,7 +62,7 @@ class SimilarClaims extends React.Component {
         const s1 = claim.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
         const cleanClaim = s1.replace(/\s{2,}/g," ");
 
-        axios.get(`https://88rrgid4rl.execute-api.us-west-2.amazonaws.com/similar-claims?claim=${cleanClaim}`)
+        getSimilarClaims(cleanClaim)
             .then(
                 (result) => {
                     this.setState({

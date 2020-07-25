@@ -16,9 +16,9 @@ class Model extends React.Component {
     render() {
         return (
             <>
-            <LandingNavbar></LandingNavbar>
-            <div className="wrapper">
-                <LandingPageHeader />
+
+            <div className="wrapper" id="model-section">
+
                 <div className="section section-about-us">
                     <Container>
                         <Row>
@@ -118,7 +118,6 @@ class Model extends React.Component {
                     </Container>
 
                 </div>
-                <DefaultFooter />
             </div>
             </>
         );

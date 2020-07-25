@@ -67,7 +67,7 @@ class Feedback extends React.Component {
             <>
             <Card>     
                 <CardBody>
-                    <CardTitle><h3>Feedback</h3></CardTitle>
+                    {/* <CardTitle><h3>Feedback</h3></CardTitle> */}
                     <CardText>{'Did you find this page to be helpful?'}{' '}
                     <Button variant="secondary" size="sm" onClick={() => this.handleShowModal(true)}>Yes</Button>{' '}
                     <Button variant="secondary" size="sm" onClick={() => this.handleShowModal(false)}>No</Button>

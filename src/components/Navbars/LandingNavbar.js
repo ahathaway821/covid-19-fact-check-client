@@ -9,9 +9,17 @@ import {
   Container,
 } from "reactstrap";
 
+const scrollToSection = (event, sectionId) => {
+  const anchor = document.querySelector(sectionId)
+  anchor.scrollIntoView({ behavior: 'smooth' })
+  event.preventDefault()
+}
+
+const textColor="text-muted";
+
 function LandingNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
-  const [textColor, setTextColor] = React.useState("");
+  //const [textColor, setTextColor] = React.useState("");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
     const updateNavbarColor = () => {
@@ -20,13 +28,13 @@ function LandingNavbar() {
         document.body.scrollTop > 499
       ) {
         setNavbarColor("");
-        setTextColor("text-muted");
+       //setTextColor("text-muted");
       } else if (
         document.documentElement.scrollTop < 499 ||
         document.body.scrollTop < 499
       ) {
         setNavbarColor("navbar-transparent");
-        setTextColor("");
+        //setTextColor("text-muted");
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -45,8 +53,8 @@ function LandingNavbar() {
           }}
         />
       ) : null}
-      <Navbar className={"fixed-top " + navbarColor} expand="lg">
-        <Container>
+      <Navbar color="light" className={"fixed-top "} expand="lg" >
+        <Container >
           <Collapse
             className="justify-content-end"
             isOpen={collapseOpen}
@@ -61,7 +69,7 @@ function LandingNavbar() {
                 </NavLink>
               </NavItem> */}
               <NavItem>
-                <NavLink to="/" tag={Link}>
+                <NavLink to="/" onClick={(e) => scrollToSection(e, "#home-section")}>
                   <p className={textColor}>
                     Home
                   </p>
@@ -75,21 +83,21 @@ function LandingNavbar() {
                 </NavLink>
               </NavItem> */}
               <NavItem>
-                <NavLink to="/about" tag={Link}>
+                <NavLink to="/about" onClick={(e) => scrollToSection(e, "#about-section")}>
                   <p className={textColor}>
                     About
                   </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/model" tag={Link}>
+              <NavLink to="/model" onClick={(e) => scrollToSection(e, "#model-section")}>
                   <p className={textColor}>
                     How it works
                   </p>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/contact" tag={Link}>
+                <NavLink to="/contact" onClick={(e) => scrollToSection(e, "#contact-section")}>
                   <p className={textColor}>
                     Contact Us
                   </p>
@@ -99,6 +107,7 @@ function LandingNavbar() {
           </Collapse>
         </Container>
       </Navbar>
+
     </>
   );
 }
