@@ -1,7 +1,7 @@
 # COVID-19-Fact-Checking-Client
 
 This library serves as the frontend for our COVID-19 Fact Checking Project.
-This project uses the UI kit ![Now UI Kit React](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/now-ui-kit-react/opt_nuk_react_thumbnail.jpg). Now UI Kit React is a free Bootstrap 4, React, React Hooks and Reactstrap UI Kit provided for free by Invision and Creative Tim. It is a beautiful cross-platform UI kit featuring over 50 elements and 3 templates.
+This project uses the Now UI Kit React. Now UI Kit React is a free Bootstrap 4, React, React Hooks and Reactstrap UI Kit provided for free by Invision and Creative Tim. It is a beautiful cross-platform UI kit featuring over 50 elements and 3 templates.
 
 You can also check the [documentation online](https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-github-readme).
 
