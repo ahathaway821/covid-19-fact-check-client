@@ -2,11 +2,6 @@ import React from "react";
 import { Container } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import { Row, Col, Card, CardText, CardBody, CardTitle, CardLink } from "reactstrap";
-import LandingNavbar from "components/LandingNavbar.js";
-import LandingPageHeader from "components/LandingPageHeader.js";
-import DefaultFooter from "components/DefaultFooter.js";
-
-// import logo from "../img/covidImage.jpg";
 
 class Model extends React.Component {
 	componentDidMount() {
@@ -16,9 +11,7 @@ class Model extends React.Component {
     render() {
         return (
             <>
-
             <div className="wrapper" id="model-section">
-
                 <div className="section section-about-us">
                     <Container>
                         <Row>

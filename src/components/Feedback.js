@@ -2,7 +2,6 @@ import React from "react";
 import { 
 	Card, 
 	CardBody, 
-	CardTitle, 
 	CardText, 
 	Button, 
 	Modal, 
@@ -83,8 +82,8 @@ class Feedback extends React.Component {
                 <CardBody>
                     {/* <CardTitle><h3>Feedback</h3></CardTitle> */}
                     <CardText>{'Did you find this page to be helpful?'}{' '}
-                    <Button variant="secondary" size="sm" onClick={() => this.handleShowModal(true)}>Yes</Button>{' '}
-                    <Button variant="secondary" size="sm" onClick={() => this.handleShowModal(false)}>No</Button>
+                    <Button color="info" size="sm" onClick={() => this.handleShowModal(true)}>Yes</Button>{' '}
+                    <Button color="info" size="sm" onClick={() => this.handleShowModal(false)}>No</Button>
                     </CardText>
                 </CardBody>
             </Card>
@@ -111,17 +110,17 @@ class Feedback extends React.Component {
                         <FormGroup controlId="formFeedback">
                             <Label><b>Reasoning</b></Label>
                             <Input as="textarea" rows="3" value={this.state.reasoning} onChange={this.handleChange}/>
-                            <p className="text-muted" font-size="1em">
+                            <p className="text-muted" style={{fontSize: "1em"}}>
                                 <i>This feedback is anonymous</i>
                             </p>
                         </FormGroup>
                     </Form>
                 </ModalBody>
                 <ModalFooter>
-                    <Button variant="secondary" onClick={this.handleCloseModal}>
+                    <Button color="primary" onClick={this.handleCloseModal}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={this.handleSubmitFeedback}>
+                    <Button color="info" onClick={this.handleSubmitFeedback}>
                         Submit
                     </Button>
                 </ModalFooter>

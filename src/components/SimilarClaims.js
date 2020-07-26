@@ -1,5 +1,4 @@
 import React from "react";
-import axios from 'axios';
 import { Card, CardTitle, CardBody, CardText, Spinner, Badge, CardLink } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import ShowMoreText from 'react-show-more-text';

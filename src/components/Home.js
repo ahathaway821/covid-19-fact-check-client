@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { Row, Col, Button, Container } from "reactstrap";
 import ShowMoreText from 'react-show-more-text';
+import { addBackToTop } from 'vanilla-back-to-top'
 
 import ClaimSearch from "./ClaimSearch";
 import PopularClaims from "./PopularClaims";
@@ -22,6 +23,12 @@ class Home extends React.Component {
 		this.handleSelectedValue = this.handleSelectedValue.bind(this);
 		// this.handleEnter = this.handleEnter.bind(this);
 		this.myRef = React.createRef();
+	}
+
+	componentDidMount() {
+		addBackToTop({
+			cornerOffset: 20
+		});
 	}
 
 	handleChangeValue(val) {
@@ -75,12 +82,13 @@ class Home extends React.Component {
 					</Row>
 				</Container>
 				<br />
+				<br />
 				<PopularClaims />
 				<br />
 				<div style={{ textAlign: 'left'}}>
 					<blockquote className="blockquote">
 						<i className="now-ui-icons ui-1_bell-53"></i>
-						<b>Disclaimer</b>
+						<b>{'    '}Disclaimer</b>
 						<ShowMoreText
 							lines={3}
 							more='Show more'

@@ -31,7 +31,7 @@ function LandingPageHeader() {
 					<Container>
 						<h1 className="title">Help stop the spread of <br /> COVID-19 Misinformation</h1>
 						<h5 className="description" style={{color: "white", fontWeight: "normal"}}>
-							We have collected over 10,000 claims from fact-checking organizations like Poynter and Politifact as well as common FAQ’s from World Health Organization (WHO) and Centers for Disease Control and Prevention (CDC) to create a central hub for COVID-19 fact-checking
+							We have collected over 10,000 claims from fact-checking organizations like Poynter and Politifact as well as common FAQ’s from World Health Organization (WHO) and Centers for Disease Control and Prevention (CDC) to create a central hub for COVID-19 fact checking.
 						</h5>
 					</Container>
 				</div>

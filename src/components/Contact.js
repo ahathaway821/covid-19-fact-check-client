@@ -63,7 +63,6 @@ function Contact() {
                             type="textarea"
                         ></Input>
                         </div>
-                        <br />
                         <div className="send-button">
                         <Button
                             block

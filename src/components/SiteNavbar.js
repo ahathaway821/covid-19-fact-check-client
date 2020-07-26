@@ -13,7 +13,7 @@ function SiteNavbar() {
 		<>
 		<Navbar color="dark" expand="lg" className="sticky-top">
 			<Container className="justify-content-end">
-				<Nav navbar >
+				<Nav navbar>
 					<NavItem>
 						<NavLink to="/" tag={Link}>
 							<p className="">

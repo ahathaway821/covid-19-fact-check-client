@@ -56,9 +56,9 @@ class About extends React.Component {
                                                     src={require("assets/img/team/angel.jpg")}
                                                     >
                                                 </img>
-                                                <h4 className="title">Angel Chen</h4>
+                                                <h4 className="title" style={{paddingTop: "30px"}}>Angel Chen</h4>
                                                 <p className="category text-info">Software Engineer</p>
-                                                <p className="text-muted">
+                                                <p className="text-muted text-justify">
                                                 Angel works as a Software Engineer at Apple’s Cloud Services organization where she develops and maintains data ETL pipelines and analytics platform backed by Spark.
                                                 {" "}
                                                 </p>
@@ -94,26 +94,9 @@ class About extends React.Component {
                                                 <Button
                                                 className="btn-icon btn-round"
                                                 color="info"
-                                                href="#pablo"
-                                                onClick={(e) => e.preventDefault()}
+                                                href="https://www.linkedin.com/in/xander-hathaway-88591688/"
                                                 >
-                                                <i className="fab fa-google-plus"></i>
-                                                </Button>
-                                                <Button
-                                                className="btn-icon btn-round"
-                                                color="info"
-                                                href="#pablo"
-                                                onClick={(e) => e.preventDefault()}
-                                                >
-                                                <i className="fab fa-youtube"></i>
-                                                </Button>
-                                                <Button
-                                                className="btn-icon btn-round"
-                                                color="info"
-                                                href="#pablo"
-                                                onClick={(e) => e.preventDefault()}
-                                                >
-                                                <i className="fab fa-twitter"></i>
+                                                <i className="fab fa-linkedin"></i>
                                                 </Button>
                                             </div>
                                         </Col>
@@ -131,7 +114,7 @@ class About extends React.Component {
                                                 the Lawrence Berkeley National Lab where he works
                                                 on building tools for a high-performance national 
                                                 network {" "}
-                                                <a href="http://es.net/about" target="_blank">
+                                                <a href="http://es.net/about">
                                                     ESnet
                                                 </a>{" "}
                                                 that supports scientific research.{" "}
