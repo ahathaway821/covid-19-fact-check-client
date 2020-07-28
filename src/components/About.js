@@ -87,7 +87,7 @@ class About extends React.Component {
                                                 <Button
                                                 className="btn-icon btn-round"
                                                 color="info"
-                                                href="www.linkedin.com/in/anup-jha"
+                                                href="https://www.linkedin.com/in/anup-jha"
                                                 >
                                                 <i className="fab fa-linkedin"></i>
                                                 </Button>
