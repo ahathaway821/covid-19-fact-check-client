@@ -58,11 +58,10 @@ class About extends React.Component {
                                                 </img>
                                                 <h4 className="title" style={{paddingTop: "30px"}}>Angel Chen</h4>
                                                 <p className="category text-info">Software Engineer</p>
-                                                <p className="text-muted text-justify">
+                                                <p className="text-muted text-justify" style={{height: "265px"}}>
                                                 Angel works as a Software Engineer at Apple’s Cloud Services organization where she develops and maintains data ETL pipelines and analytics platform backed by Spark.
                                                 {" "}
                                                 </p>
-                                                <br />
                                                 <Button
                                                 className="btn-icon btn-round"
                                                 color="info"
@@ -77,24 +76,18 @@ class About extends React.Component {
                                                 <img
                                                 alt="..."
                                                 className="rounded-circle img-fluid img-raised"
-                                                src={require("assets/img/ryan.jpg")}
+                                                src={require("assets/img/team/anup.png")}
                                                 ></img>
                                                 <h4 className="title">Anup Jha</h4>
-                                                <p className="category text-info">Software Engineer</p>
-                                                <p className="text-muted">
-                                                You can write here details about one of your team members.
-                                                You can give more details about what they do. Feel free to
-                                                add some{" "}
-                                                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                                    links
-                                                </a>{" "}
-                                                for people to be able to follow them outside the site.
+                                                <p className="category text-info">Product Development Director </p>
+                                                <p className="text-muted" style={{height: "240px"}}>
+                                                Anup works as a Product Development Director at Oracle SaaS application group. His focus is on applications using in-memory and autonomous database for Hybrid analytical and transactional processing loads.{" "}
                                                 </p>
-                                                <br />
+
                                                 <Button
                                                 className="btn-icon btn-round"
                                                 color="info"
-                                                href="https://www.linkedin.com/in/xander-hathaway-88591688/"
+                                                href="www.linkedin.com/in/anup-jha"
                                                 >
                                                 <i className="fab fa-linkedin"></i>
                                                 </Button>
@@ -109,7 +102,7 @@ class About extends React.Component {
                                                 ></img>
                                                 <h4 className="title">Sartaj Baveja</h4>
                                                 <p className="category text-info">Software Engineer</p>
-                                                <p className="text-muted text-justify">
+                                                <p className="text-muted text-justify" style={{height: "265px"}}>
                                                 Sartaj is currently working as a Software Engineer at 
                                                 the Lawrence Berkeley National Lab where he works
                                                 on building tools for a high-performance national 
@@ -136,11 +129,10 @@ class About extends React.Component {
                                                 src={require("assets/img/team/xander.jpg")}
                                                 ></img>
                                                 <h4 className="title" style={{paddingTop: "35px"}}>Xander Hathaway</h4>
-                                                <p className="category text-info">Software Engineer</p>
-                                                <p className="text-muted text-justify">
+                                                <p className="category text-info" >Solution Architect</p>
+                                                <p className="text-muted text-justify" style={{height: "265px"}}>
                                                 Xander works as a Solution Architect with Slalom Build where he designs and builds a variety of cloud-based custom software solutions.{" "}
                                                 </p>
-                                                <br /><br /><br /><br />
                                                 <Button
                                                 className="btn-icon btn-round"
                                                 color="info"
