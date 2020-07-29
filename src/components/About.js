@@ -63,9 +63,9 @@ class About extends React.Component {
                                                 {" "}
                                                 </p>
                                                 <Button
-                                                className="btn-icon btn-round"
-                                                color="info"
-                                                href="http://linkedin.com/in/chenanqi/"
+                                                    className="btn-icon btn-round"
+                                                    color="info"
+                                                    href="http://linkedin.com/in/chenanqi/"
                                                 >
                                                 <i className="fab fa-linkedin"></i>
                                                 </Button>
@@ -74,20 +74,19 @@ class About extends React.Component {
                                         <Col md="3">
                                             <div className="team-player">
                                                 <img
-                                                alt="..."
-                                                className="rounded-circle img-fluid img-raised"
-                                                src={require("assets/img/team/anup.png")}
+                                                    alt="..."
+                                                    className="rounded-circle img-fluid img-raised"
+                                                    src={require("assets/img/team/anup.png")}
                                                 ></img>
                                                 <h4 className="title">Anup Jha</h4>
-                                                <p className="category text-info">Product Development Director </p>
-                                                <p className="text-muted" style={{height: "240px"}}>
+                                                <p className="category text-info">Product Development Director</p>
+                                                <p className="text-muted text-justify" style={{height: "240px"}}>
                                                 Anup works as a Product Development Director at Oracle SaaS application group. His focus is on applications using in-memory and autonomous database for Hybrid analytical and transactional processing loads.{" "}
                                                 </p>
-
                                                 <Button
-                                                className="btn-icon btn-round"
-                                                color="info"
-                                                href="https://www.linkedin.com/in/anup-jha"
+                                                    className="btn-icon btn-round"
+                                                    color="info"
+                                                    href="https://www.linkedin.com/in/anup-jha"
                                                 >
                                                 <i className="fab fa-linkedin"></i>
                                                 </Button>
@@ -96,9 +95,9 @@ class About extends React.Component {
                                         <Col md="3">
                                             <div className="team-player">
                                                 <img
-                                                alt="..."
-                                                className="rounded-circle img-fluid img-raised"
-                                                src={require("assets/img/team/sartaj.jpg")}
+                                                    alt="..."
+                                                    className="rounded-circle img-fluid img-raised"
+                                                    src={require("assets/img/team/sartaj.jpg")}
                                                 ></img>
                                                 <h4 className="title">Sartaj Baveja</h4>
                                                 <p className="category text-info">Software Engineer</p>
@@ -113,9 +112,9 @@ class About extends React.Component {
                                                 that supports scientific research.{" "}
                                                 </p>
                                                 <Button
-                                                className="btn-icon btn-round"
-                                                color="info"
-                                                href="https://www.linkedin.com/in/sartajsinghbaveja/"
+                                                    className="btn-icon btn-round"
+                                                    color="info"
+                                                    href="https://www.linkedin.com/in/sartajsinghbaveja/"
                                                 >
                                                 <i className="fab fa-linkedin"></i>
                                                 </Button>
@@ -124,9 +123,9 @@ class About extends React.Component {
                                         <Col md="3">
                                             <div className="team-player">
                                                 <img
-                                                alt="..."
-                                                className="rounded-circle img-fluid img-raised"
-                                                src={require("assets/img/team/xander.jpg")}
+                                                    alt="..."
+                                                    className="rounded-circle img-fluid img-raised"
+                                                    src={require("assets/img/team/xander.jpg")}
                                                 ></img>
                                                 <h4 className="title" style={{paddingTop: "35px"}}>Xander Hathaway</h4>
                                                 <p className="category text-info" >Solution Architect</p>
@@ -134,9 +133,9 @@ class About extends React.Component {
                                                 Xander works as a Solution Architect with Slalom Build where he designs and builds a variety of cloud-based custom software solutions.{" "}
                                                 </p>
                                                 <Button
-                                                className="btn-icon btn-round"
-                                                color="info"
-                                                href="https://www.linkedin.com/in/xander-hathaway-88591688/"
+                                                    className="btn-icon btn-round"
+                                                    color="info"
+                                                    href="https://www.linkedin.com/in/xander-hathaway-88591688/"
                                                 >
                                                 <i className="fab fa-linkedin"></i>
                                                 </Button>
