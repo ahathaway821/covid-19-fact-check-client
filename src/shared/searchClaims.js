@@ -31,7 +31,7 @@ const searchClaims = (query) => {
 				}
 			}
 		},
-		"sort": ["_score", {"date": "desc"}]
+		"sort": [{"date": "desc"}, "_score"]
 	}, config)
 	.then(res => {  
 		const body = isLocal ? res.data : JSON.parse(res.data.body)

@@ -70,7 +70,7 @@ class Home extends React.Component {
 								onSelectedValue={this.handleSelectedValue} 
 								onChangeValue={this.handleChangeValue}
 								onEnter={this.handlePredict}
-								
+								placeHolder={'Search...'}
 							/>
 						</Col>
 						<Col md="2">
