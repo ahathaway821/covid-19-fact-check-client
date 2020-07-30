@@ -70,7 +70,7 @@ class Home extends React.Component {
 								onSelectedValue={this.handleSelectedValue} 
 								onChangeValue={this.handleChangeValue}
 								onEnter={this.handlePredict}
-								placeHolder={"Search for a COVID-19 Claim"}
+								
 							/>
 						</Col>
 						<Col md="2">
@@ -97,7 +97,8 @@ class Home extends React.Component {
 							onClick={this.executeOnClick}
 							expanded={false}
 						>
-							The information contained herein should NOT be used as a substitute for the advice of an appropriately qualified and licensed physician or other health care provider. The tool is not a substitute for the care provided by licensed healthcare practitioners and consumers are urged to consult with their healthcare practitioner in all instances. Although we attempt to provide accurate and up-to-date information, no guarantee is made to that effect. This tool does not endorse any medications, diagnose patients, or recommend therapy. 
+							The information contained herein should NOT be used as a substitute for the advice of an appropriately qualified and licensed physician or other health care provider. 
+                            The tool is not a substitute for the care provided by licensed healthcare practitioners and consumers are urged to consult with their healthcare practitioner in all instances. Although we attempt to provide accurate and up-to-date information, no guarantee is made to that effect. This tool does not endorse any medications, diagnose patients, or recommend therapy. 
 						</ShowMoreText>
 					</blockquote>
 				</div>

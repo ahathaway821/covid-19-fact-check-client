@@ -82,12 +82,17 @@ class OurRating extends React.Component {
 
 	componentDidMount() {
 		this.getPredictionRating(this.props.claim)
-	}
+    }
+    
+    canPredictClaim() {
+        return this.state.closestSimilarClaimScore < minCosineDistance // do we have a relevant enough claim?
+            && (this.props.claim.split(' ') > 2) // is the claim more than 2 words long
+    }
 
     render() {
         if (this.state.isLoaded === true && this.state.isSimilarScoreLoaded) {
 
-            if (this.state.closestSimilarClaimScore > minCosineDistance) {
+            if (!this.canPredictClaim()) {
                 return (
                     <Card style={{ height: '20rem' }} initiallyExpanded={false}>
                     <CardBody>
