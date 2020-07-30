@@ -86,12 +86,11 @@ class OurRating extends React.Component {
     
     canPredictClaim() {
         return this.state.closestSimilarClaimScore < minCosineDistance // do we have a relevant enough claim?
-            && (this.props.claim.split(' ') > 2) // is the claim more than 2 words long
+            && (this.props.claim.split(' ').length > 2) // is the claim more than 2 words long
     }
 
     render() {
         if (this.state.isLoaded === true && this.state.isSimilarScoreLoaded) {
-
             if (!this.canPredictClaim()) {
                 return (
                     <Card style={{ height: '20rem' }} initiallyExpanded={false}>
@@ -103,70 +102,70 @@ class OurRating extends React.Component {
                         <CardText>Our algorithm does not have enough relevant evidence to evaluate your claim at this time.</CardText>
                     </CardBody>
                 </Card>)
-            }
-
-            let progressBarPercentage = this.getConfidenceLevel(this.state.score, this.threshold)
-            const ratingLabel = this.getRatingLabel(this.state.score, this.threshold);
-
-            let value;
-            if(ratingLabel === "False") {
-                value = 100 - progressBarPercentage
             } else {
-                value = progressBarPercentage
+                let progressBarPercentage = this.getConfidenceLevel(this.state.score, this.threshold)
+                const ratingLabel = this.getRatingLabel(this.state.score, this.threshold);
+
+                let value;
+                if(ratingLabel === "False") {
+                    value = 100 - progressBarPercentage
+                } else {
+                    value = progressBarPercentage
+                }
+                return (
+                    <Card style={{ height: '20rem' }}>
+                        <CardBody>
+                            <CardTitle><h3>Rating</h3></CardTitle>
+                            <CardText><i>This rating was predicted by <b style={{fontWeight: "bold"}}>our algorithm</b></i></CardText>
+                            <center>
+                                <ReactSpeedometer
+                                    height={250}
+                                    minValue={0}
+                                    maxValue={100}
+                                    needleHeightRatio={0.6}
+                                    value={value}
+                                    customSegmentStops={[0, 15, 30, 70, 85, 100]}
+                                    segmentColors={["#dc3545", "#f06767", "#ffc107", "#9bd25c", "#28a745"]}
+                                    currentValueText="COVIDFact Rating"
+                                    customSegmentLabels={[
+                                    {
+                                        text: "False",
+                                        position: "OUTSIDE",
+                                        color: "#000000",
+                                    },
+                                    {
+                                        text: "",
+                                        position: "OUTSIDE",
+                                        color: "#000000",
+                                    },
+                                    {
+                                        text: "Not enough evidence",
+                                        position: "OUTSIDE",
+                                        color: "#000000",
+                                    },
+                                    {
+                                        text: "",
+                                        position: "OUTSIDE",
+                                        color: "#000000",
+                                    },
+                                    {
+                                        text: "True",
+                                        position: "OUTSIDE",
+                                        color: "#000000",
+                                    },
+                                    ]}
+                                    ringWidth={25}
+                                    needleTransitionDuration={1000}
+                                    // needleTransition="easeElastic"
+                                    needleColor={"#a7ff83"}
+                                    textColor={"#000000"}
+                                    labelFontSize={"13"}
+                                />
+                            </center>
+                        </CardBody>
+                    </Card>
+                );
             }
-            return (
-                <Card style={{ height: '20rem' }}>
-                    <CardBody>
-                        <CardTitle><h3>Rating</h3></CardTitle>
-                        <CardText><i>This rating was predicted by <b style={{fontWeight: "bold"}}>our algorithm</b></i></CardText>
-                        <center>
-                            <ReactSpeedometer
-                                height={250}
-                                minValue={0}
-                                maxValue={100}
-                                needleHeightRatio={0.6}
-                                value={value}
-                                customSegmentStops={[0, 15, 30, 70, 85, 100]}
-                                segmentColors={["#dc3545", "#f06767", "#ffc107", "#9bd25c", "#28a745"]}
-                                currentValueText="COVIDFact Rating"
-                                customSegmentLabels={[
-                                {
-                                    text: "False",
-                                    position: "OUTSIDE",
-                                    color: "#000000",
-                                },
-                                {
-                                    text: "",
-                                    position: "OUTSIDE",
-                                    color: "#000000",
-                                },
-                                {
-                                    text: "Not enough evidence",
-                                    position: "OUTSIDE",
-                                    color: "#000000",
-                                },
-                                {
-                                    text: "",
-                                    position: "OUTSIDE",
-                                    color: "#000000",
-                                },
-                                {
-                                    text: "True",
-                                    position: "OUTSIDE",
-                                    color: "#000000",
-                                },
-                                ]}
-                                ringWidth={25}
-                                needleTransitionDuration={1000}
-                                // needleTransition="easeElastic"
-                                needleColor={"#a7ff83"}
-                                textColor={"#000000"}
-                                labelFontSize={"13"}
-                            />
-                        </center>
-                    </CardBody>
-                </Card>
-            );
         }
 
 		return  (

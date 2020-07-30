@@ -21,7 +21,7 @@ class Predict extends React.Component {
 			claim: ((props.location.state || {}).claim || defaultClaim),
 			isValidatedClaim: ((props.location.state || {}).isValidatedClaim || false),
 			claimIndexResult: ((props.location.state || {}).claimIndexResult || {}),
-			pills: "1"
+			pills: ((props.location.state || {}).pills || "1")
 		};
 		this.handleChangeValue = this.handleChangeValue.bind(this);
 		this.handleSelectedValue = this.handleSelectedValue.bind(this);
@@ -53,22 +53,23 @@ class Predict extends React.Component {
 
 		const selectedClaim = val[0].claim;
 		submitFeedback(selectedClaim, true, feedbackTypes.userQuery);
-		this.setState({claimIndexResult: val, claim: selectedClaim, isValidatedClaim: true });
+		this.setState({claimIndexResult: val, claim: selectedClaim, isValidatedClaim: true, pills: "1" });
 		this.props.history.push({
 			pathname: '/evaluate',
-			state: { claimIndexResult: val, claim: selectedClaim, isValidatedClaim: true }
+			state: { claimIndexResult: val, claim: selectedClaim, isValidatedClaim: true, pills: "1" }
 		})
 	}
 
 	handlePredict() {
 		const newClaim = this.claimInput;
 		submitFeedback(newClaim, false, feedbackTypes.userQuery);
-		this.setState({ claim: newClaim, isValidatedClaim: false });
+		this.setState({ claim: newClaim, isValidatedClaim: false, pills: "1" });
 		this.props.history.push({
 			pathname: '/evaluate',
 			state: { 
 				claim: newClaim, 
-				isValidatedClaim: false
+				isValidatedClaim: false,
+				pills: "1"
 			}
 		})
 	}
