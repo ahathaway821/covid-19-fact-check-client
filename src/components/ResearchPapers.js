@@ -63,7 +63,7 @@ class ResearchPapers extends React.Component {
 									<h4>{item.fields.title ? item.fields.title.replace( /(<([^>]+)>)/ig, '') : ""}</h4>
 								</CardTitle>
 								<CardText>
-									<b>Absract: </b>
+									<b>Abstract: </b>
 									<ShowMoreText
 										lines={3}
 										more='Show more'
