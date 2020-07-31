@@ -21,7 +21,6 @@ class Home extends React.Component {
 		this.handlePredict = this.handlePredict.bind(this);
 		this.handleChangeValue = this.handleChangeValue.bind(this);
 		this.handleSelectedValue = this.handleSelectedValue.bind(this);
-		// this.handleEnter = this.handleEnter.bind(this);
 		this.myRef = React.createRef();
 	}
 
@@ -49,7 +48,6 @@ class Home extends React.Component {
 	handlePredict() {
 		if(this.myRef.current !== null) {
 			submitFeedback(this.myRef, false, feedbackTypes.userQuery);
-
 			this.props.history.push({
 				pathname: '/evaluate',
 				state: { 
@@ -69,8 +67,8 @@ class Home extends React.Component {
 							<ClaimSearch 
 								onSelectedValue={this.handleSelectedValue} 
 								onChangeValue={this.handleChangeValue}
+								placeHolder={"Search..."}
 								onEnter={this.handlePredict}
-								placeHolder={'Search...'}
 							/>
 						</Col>
 						<Col md="2">

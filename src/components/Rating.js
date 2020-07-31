@@ -3,6 +3,7 @@ import { Row, Col, Card, CardTitle, CardBody, Container, CardText } from "reacts
 import { withRouter } from "react-router-dom";
 import OurRating from './OurRating';
 import ReactSpeedometer from "react-d3-speedometer"
+import ShowMoreText from 'react-show-more-text';
 
 class Rating extends React.Component {
 	render() {
@@ -55,7 +56,20 @@ class Rating extends React.Component {
 							<Card style={{ height: '20rem' }}>
 								<CardBody>
 									<CardTitle><h3>Claim</h3></CardTitle>
-									<CardText><h5>{this.props.claim}</h5></CardText>
+									<CardText>
+										<h5>
+											<ShowMoreText
+												lines={5}
+												more='Show more'
+												less='Show less'
+												anchorClass=''
+												onClick={this.executeOnClick}
+												expanded={false}
+											>
+												{this.props.claim}
+											</ShowMoreText>
+										</h5>
+									</CardText>
 								</CardBody>
 							</Card>
 						</Col>

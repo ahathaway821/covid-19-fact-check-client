@@ -48,10 +48,11 @@ class Predict extends React.Component {
 
 	handleSelectedValue(val) {
 		if (!val[0]) {
-				return;
+			return;
 		}
 
 		const selectedClaim = val[0].claim;
+		console.log("handleSelectedValue ", selectedClaim);
 		submitFeedback(selectedClaim, true, feedbackTypes.userQuery);
 		this.setState({claimIndexResult: val, claim: selectedClaim, isValidatedClaim: true, pills: "1" });
 		this.props.history.push({

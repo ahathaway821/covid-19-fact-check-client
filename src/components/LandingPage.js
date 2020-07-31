@@ -36,7 +36,7 @@ function LandingPage() {
 					<Row>
 						<Col className="ml-auto mr-auto text-center" md="8">
 							<h2 className="title">Evaluate a COVID-19 Claim</h2>
-							<p className="description"><b><i>Pick a manually fact-checked claim from the typeahead or type in a custom claim for our algorithm to evaluate</i></b></p>
+							<p className="description"><b><i>Pick a manually fact-checked claim from the typeahead or <br /> type in a custom claim for our algorithm to evaluate</i></b></p>
 							{/* <h5 className="description">
 								<i>Pick a manually fact-checked claim from the typeahead or type in a custom claim for our algorithm to evaluate</i>
 							</h5> */}

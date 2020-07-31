@@ -79,8 +79,8 @@ class About extends React.Component {
                                                     src={require("assets/img/team/anup.png")}
                                                 ></img>
                                                 <h4 className="title">Anup Jha</h4>
-                                                <p className="category text-info">Product Development Director</p>
-                                                <p className="text-muted text-justify" style={{height: "240px"}}>
+                                                <p className="category text-info" style={{fontSize: "15px", paddingTop: "2px"}}>Product Development Director</p>
+                                                <p className="text-muted text-justify" style={{height: "265px", paddingTop: "2px"}}>
                                                 Anup works as a Product Development Director at Oracle SaaS application group. His focus is on applications using in-memory and autonomous database for Hybrid analytical and transactional processing loads.{" "}
                                                 </p>
                                                 <Button
@@ -103,8 +103,7 @@ class About extends React.Component {
                                                 <p className="category text-info">Software Engineer</p>
                                                 <p className="text-muted text-justify" style={{height: "265px"}}>
                                                 Sartaj is currently working as a Software Engineer at 
-                                                the Lawrence Berkeley National Lab where he works
-                                                on building tools for a high-performance national 
+                                                the Bereley Lab where he works on building tools for a high-performance national 
                                                 network {" "}
                                                 <a href="http://es.net/about">
                                                     ESnet
