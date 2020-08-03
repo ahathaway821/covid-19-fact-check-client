@@ -58,7 +58,7 @@ class About extends React.Component {
                                                 </img>
                                                 <h4 className="title" style={{paddingTop: "30px"}}>Angel Chen</h4>
                                                 <p className="category text-info">Software Engineer</p>
-                                                <p className="text-muted text-justify" style={{height: "265px"}}>
+                                                <p className="text-justify" style={{height: "265px"}}>
                                                 Angel works as a Software Engineer at Apple’s Cloud Services organization where she develops and maintains data ETL pipelines and analytics platform backed by Spark.
                                                 {" "}
                                                 </p>
@@ -80,7 +80,7 @@ class About extends React.Component {
                                                 ></img>
                                                 <h4 className="title">Anup Jha</h4>
                                                 <p className="category text-info" style={{fontSize: "15px", paddingTop: "2px"}}>Product Development Director</p>
-                                                <p className="text-muted text-justify" style={{height: "265px", paddingTop: "2px"}}>
+                                                <p className="text-justify" style={{height: "265px", paddingTop: "2px"}}>
                                                 Anup works as a Product Development Director at Oracle SaaS application group. His focus is on applications using in-memory and autonomous database for Hybrid analytical and transactional processing loads.{" "}
                                                 </p>
                                                 <Button
@@ -101,7 +101,7 @@ class About extends React.Component {
                                                 ></img>
                                                 <h4 className="title">Sartaj Baveja</h4>
                                                 <p className="category text-info">Software Engineer</p>
-                                                <p className="text-muted text-justify" style={{height: "265px"}}>
+                                                <p className="text-justify" style={{height: "265px"}}>
                                                 Sartaj is currently working as a Software Engineer at 
                                                 the Bereley Lab where he works on building tools for a high-performance national 
                                                 network {" "}
@@ -128,7 +128,7 @@ class About extends React.Component {
                                                 ></img>
                                                 <h4 className="title" style={{paddingTop: "35px"}}>Xander Hathaway</h4>
                                                 <p className="category text-info" >Solution Architect</p>
-                                                <p className="text-muted text-justify" style={{height: "265px"}}>
+                                                <p className="text-justify" style={{height: "265px"}}>
                                                 Xander works as a Solution Architect with Slalom Build where he works with companies from a variety of different industries to design and engineer custom, enterprise software solutions built upon the latest cloud architectures and modern web frameworks. {" "}
                                                 </p>
                                                 <Button
