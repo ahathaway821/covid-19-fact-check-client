@@ -21,19 +21,17 @@ class Model extends React.Component {
                         </Row>
                         <Row>
                             <Col>
-                                <Card style={{ width: "20rem", height: "30rem" }}>
+                                <Card style={{ width: "22rem", height: "31rem" }}>
                                     <CardBody>
                                         <CardTitle tag="h3" className="text-center">Our Data</CardTitle>
-                                    {/* <CardSubtitle className="mb-2 text-muted">
-                                        Card subtitle
-                                    </CardSubtitle> */}
                                     <CardText className="text-justify">
                                         We are combining data from multiple fact checking organizations such as Poynter, Politifact, 
-                                        Empirical Studies of Conflict (ESOC) at Princeton as well as websites that include lists of 
+                                        Empirical Studies of Conflict (ESOC) at Princeton, as well as reputable health sources with lists of 
                                         common FAQ’s such as the World Health Organization (WHO) and
-                                        Centers for Disease Control and Prevention (CDC). 
-                                        <br /><br /><br /><br />
+                                        Centers for Disease Control and Prevention (CDC). Research paper data is retrieved from COVID Scholar which uses datasets like CORD-19 from Semantic Scholar.
+                               
                                     </CardText>
+                                    <br/>
                                     <CardLink href="https://www.poynter.org/ifcn-covid-19-misinformation/" target="_blank">
                                         Poynter
                                     </CardLink>
@@ -46,11 +44,14 @@ class Model extends React.Component {
                                     <CardLink href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html" target="_blank">
                                         CDC
                                     </CardLink>
+                                    <CardLink href="https://www.semanticscholar.org/cord19" target="_blank">
+                                        CORD-19
+                                    </CardLink>
                                     </CardBody>
                                 </Card>
                             </Col>
                             <Col>
-                                <Card style={{ width: "20rem", height: "30rem" }}>
+                                <Card style={{ width: "21rem", height: "31rem" }}>
                                     <CardBody>
                                     <CardTitle tag="h3" className="text-center">Our Approach</CardTitle>
                                     {/* <CardSubtitle className="mb-2 text-muted">
@@ -60,10 +61,11 @@ class Model extends React.Component {
                                         We are using a BERT model
                                         to perform classification for our claims. The word embeddings from BERT are passed to
                                         a Convolutional Neural Network which forwards it to a
-                                        Feed Forward Deep Neural Network that uses sigmoid activation to predict the output.
+                                        Feed Forward Deep Neural Network that uses sigmoid activation to predict the binary thruthfulness output.
                                         For generating semantically similar claims, we are using Google Cloud Platform's 
                                         natural language API.
                                     </CardText>
+                                    <br/><br/>
                                     <CardLink href="https://github.com/google-research/bert" target="_blank">
                                         BERT
                                     </CardLink>
@@ -74,16 +76,16 @@ class Model extends React.Component {
                                 </Card>
                             </Col>
                             <Col>
-                                <Card style={{ width: "20rem", height: "30rem" }}>
+                                <Card style={{ width: "21rem", height: "31rem" }}>
                                     <CardBody>
                                     <CardTitle tag="h3" className="text-center">Our Infrastructure</CardTitle>
                                     {/* <CardSubtitle className="mb-2 text-muted">
                                         Card subtitle
                                     </CardSubtitle> */}
                                     <CardText className="text-justify">
-                                        We are using Amazon Web Services extensively for this project. The frontend is a react application
-                                        which is being served using AWS-Amplify. There are multiple API endpoints setup using AWS Sagemaker that
-                                        fetch similar claims, relevant research papers, run inference on our deployed models as well as serve the typeahead feature.
+                                        We are using Amazon Web Services extensively for this project. The frontend is a React application
+                                        which is being served using AWS-Amplify. Our TensorFlow classification model is trained and deployed using SageMaker,
+                                        and there are multiple Lambda API endpoints that fetch similar claims and relevant research papers. Our typeahead is driven by an index served with Elasticsearch.
                                         <br /><br />
                                         Take a look at the diagram below for the entire architecture 
                                     </CardText>
@@ -106,6 +108,52 @@ class Model extends React.Component {
                                 src={require("assets/img/architecture.jpg")}
                                 >
                             </img>
+                        </Col>
+                        </Row>
+                    </Container>
+                    <Container style={{marginTop: "40px"}}>
+                        <Row>
+                            <Col className="ml-auto mr-auto text-center" md="8">
+                                <h2 className="title">How well does this work?</h2>
+                            </Col>
+                        </Row>
+                        <Row>
+                        <Col className="ml-auto mr-auto text-center" md="8">
+                            <Card>
+                                <CardBody>
+                                <CardTitle tag="h3" className="text-center">Baseline</CardTitle>
+                                {/* <CardSubtitle className="mb-2 text-muted">
+                                    Card subtitle
+                                </CardSubtitle> */}
+                                <CardText className="text-justify">
+                                    Our dataset is fairly imbalanced with the vast majority of all claims falling into the 'false' category. If our model predicted the most common class regardless of the input, we would see a baseline accuracy of 84%.
+                                </CardText>
+                                <CardText className="text-justify">
+                                    Using a simple, bag of words Naive Bayes model, we reach a 90.4% accuracy in evaluating our test dataset. This is the functional baseline we were interested in improving upon.
+                                </CardText>
+                                </CardBody>
+                            </Card>
+                            <Card>
+                                <CardBody>
+                                <CardTitle tag="h3" className="text-center">Results</CardTitle>
+                                {/* <CardSubtitle className="mb-2 text-muted">
+                                    Card subtitle
+                                </CardSubtitle> */}
+                                <CardText className="text-justify">
+                                    Below is the confusion matrix from our final model. Our accuracy reached 96%, passing the Naive Bayes model by around 6%.
+                                </CardText>
+                                <img
+                                    alt="..."
+                                    className="img-fluid img-raised"
+                                    style={{margin: "20px"}}
+                                    src={require("assets/img/confusion_matrix.png")}
+                                    >
+                                </img>
+                                <CardText className="text-justify">
+                                    Because our dataset is so imbalanced, we weren't that interested in our accuracy score. We spent more time focusing on the F1 score. 
+                                </CardText>
+                                </CardBody>
+                            </Card>
                         </Col>
                         </Row>
                     </Container>

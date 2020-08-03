@@ -19,11 +19,11 @@ class About extends React.Component {
                         <Col className="ml-auto mr-auto text-center" md="8">
                             <h2 className="title">About CovidFact</h2>
                             <h5 className="text-justify text-muted">
-                                Misinformation regarding COVID-19 can be dangerous for communities if it causes people to act against the best interests of the community at large, and can cause unnecessary transmission of the disease, fear rooted in misunderstanding, and potentially avoidable deaths.
-                                We see in the literature that posting corrections, or identifying misinformation can be slow and have limited effectiveness given that the information has already spread. We believe that through this software, we can limit the amount of research required by an average individual to feel confident in a behavior or stance. 
+                                Misinformation regarding COVID-19 can be dangerous for communities when it causes people to act against the best interests of the community at large. It can cause unnecessary transmission of the disease, fear rooted in misunderstanding, and potentially avoidable deaths.
+                                The internet is awash with conflicting truths, and it can be hard to sort through the immense amount of new information that seems to come out every day during the pandemic. The spread of misinformation across the internet mirrors the spread of this novel virus and accentuates the problems at hand. In taking a reactive appraoch, we see in the literature that posting corrections or labeling misinformation can be slow and have limited effectiveness given that the misinformation has already spread. We believe that through this software, we can take a more proactive appraoch to limit the amount of research required by an average individual to feel confident in a behavior or stance before sharing information with other other individuals. 
                             </h5>
                             <h5 className="text-justify text-muted">
-                                Through CovidFact, our aim is to combat the spread of misinformation regarding COVID-19. Specifically, we are using automated fact checking to help verify information related to COVID-19.
+                                Through CovidFact, our aim is to combat the spread of misinformation regarding COVID-19. Specifically, we are using automated fact checking to help verify information related to COVID-19. We present multiple tiers of information for claims about this novel coronavirus, ranging from a truthfulness classification score, relevant research papers, and semantically similar claims to help users investigate a particular topic. 
                             </h5>
                         </Col>
                         </Row>
@@ -129,7 +129,7 @@ class About extends React.Component {
                                                 <h4 className="title" style={{paddingTop: "35px"}}>Xander Hathaway</h4>
                                                 <p className="category text-info" >Solution Architect</p>
                                                 <p className="text-muted text-justify" style={{height: "265px"}}>
-                                                Xander works as a Solution Architect with Slalom Build where he designs and builds a variety of cloud-based custom software solutions.{" "}
+                                                Xander works as a Solution Architect with Slalom Build where he works with companies from a variety of different industries to design and engineer custom, enterprise software solutions built upon the latest cloud architectures and modern web frameworks. {" "}
                                                 </p>
                                                 <Button
                                                     className="btn-icon btn-round"
