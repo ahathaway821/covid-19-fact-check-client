@@ -20,7 +20,7 @@ class About extends React.Component {
                             <h2 className="title">About CovidFact</h2>
                             <h5 className="text-justify text-muted">
                                 Misinformation regarding COVID-19 can be dangerous for communities when it causes people to act against the best interests of the community at large. It can cause unnecessary transmission of the disease, fear rooted in misunderstanding, and potentially avoidable deaths.
-                                The internet is awash with conflicting truths, and it can be hard to sift through the immense amount of new information that seems to come out every day during the pandemic. The spread of misinformation across the internet mirrors the spread of this novel virus and accentuates the problems at hand. We see in the literature that a reactive appraoch, posting corrections or labeling misinformation, can be slow and have limited effectiveness given that the misinformation has already spread. We believe that through this software, we can take a more proactive appraoch to limit the amount of research required by an average individual to feel confident in a behavior or stance before sharing information with other other individuals. 
+                                The internet is awash with conflicting truths, and it can be hard to sift through the immense amount of new information that seems to come out every day during the pandemic. The spread of misinformation across the internet mirrors the spread of this novel virus and accentuates the problems at hand. We see in the literature that a reactive approach, posting corrections or labeling misinformation, can be slow and have limited effectiveness given that the misinformation has already spread. We believe that through this software, we can take a more proactive approach to limit the amount of research required by an average individual to feel confident in a behavior or stance before sharing information with other individuals. 
                             </h5>
                             <h5 className="text-justify text-muted">
                                 Through CovidFact, our aim is to combat the spread of misinformation regarding COVID-19. Specifically, we are using an aggregated collection of manually fact-checked COVID-19 claims in conjunction with automated fact checking to help verify information related to COVID-19. We present multiple tiers of information for claims about this novel coronavirus, including a truthfulness classification score, relevant research papers, and semantically similar claims to help users investigate a particular topic. 
@@ -58,7 +58,7 @@ class About extends React.Component {
                                                 </img>
                                                 <h4 className="title" style={{paddingTop: "30px"}}>Angel Chen</h4>
                                                 <p className="category text-info">Software Engineer</p>
-                                                <p className="text-muted text-justify" style={{height: "265px"}}>
+                                                <p className="text-justify" style={{height: "265px"}}>
                                                 Angel works as a Software Engineer at Apple’s Cloud Services organization where she develops and maintains data ETL pipelines and analytics platform backed by Spark.
                                                 {" "}
                                                 </p>
@@ -80,7 +80,7 @@ class About extends React.Component {
                                                 ></img>
                                                 <h4 className="title">Anup Jha</h4>
                                                 <p className="category text-info" style={{fontSize: "15px", paddingTop: "2px"}}>Product Development Director</p>
-                                                <p className="text-muted text-justify" style={{height: "265px", paddingTop: "2px"}}>
+                                                <p className="text-justify" style={{height: "265px", paddingTop: "2px"}}>
                                                 Anup works as a Product Development Director at Oracle SaaS application group. His focus is on applications using in-memory and autonomous database for Hybrid analytical and transactional processing loads.{" "}
                                                 </p>
                                                 <Button
@@ -101,7 +101,7 @@ class About extends React.Component {
                                                 ></img>
                                                 <h4 className="title">Sartaj Baveja</h4>
                                                 <p className="category text-info">Software Engineer</p>
-                                                <p className="text-muted text-justify" style={{height: "265px"}}>
+                                                <p className="text-justify" style={{height: "265px"}}>
                                                 Sartaj is currently working as a Software Engineer at 
                                                 the Bereley Lab where he works on building tools for a high-performance national 
                                                 network {" "}
@@ -128,7 +128,7 @@ class About extends React.Component {
                                                 ></img>
                                                 <h4 className="title" style={{paddingTop: "35px"}}>Xander Hathaway</h4>
                                                 <p className="category text-info" >Solution Architect</p>
-                                                <p className="text-muted text-justify" style={{height: "265px"}}>
+                                                <p className="text-justify" style={{height: "265px"}}>
                                                 Xander works as a Solution Architect with Slalom Build where he works with companies from a variety of different industries to design and engineer custom, enterprise software solutions built upon the latest cloud architectures and modern web frameworks. {" "}
                                                 </p>
                                                 <Button
