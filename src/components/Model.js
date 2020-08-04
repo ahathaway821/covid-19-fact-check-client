@@ -176,7 +176,7 @@ class Model extends React.Component {
                                     alt="..."
                                     className="img-fluid img-raised"
                                     style={{margin: "20px"}}
-                                    src={require("assets/img/roc_curve.png")}
+                                    src={require("assets/img/pr_curve.png")}
                                     >
                                 </img>
                                 <CardText className="text-justify">
