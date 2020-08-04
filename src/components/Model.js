@@ -94,21 +94,38 @@ class Model extends React.Component {
                             </Col>
                         </Row>
                     </Container>
-                    <Container>
+                    <Container style={{marginTop: "40px"}}>
                         <Row>
                             <Col className="ml-auto mr-auto text-center" md="8">
-                                <h2 className="title">Architecture</h2>
+                                <h2 className="title">Cloud Architecture</h2>
                             </Col>
                         </Row>
                         <Row>
-                        <Col className="ml-auto mr-auto text-center" md="8">
-                            <img
-                                alt="..."
-                                className="img-fluid img-raised"
-                                src={require("assets/img/architecture.jpg")}
-                                >
-                            </img>
-                        </Col>
+                            <Col className="ml-auto mr-auto text-center" md="8">
+                                <img
+                                    alt="..."
+                                    className="img-fluid img-raised"
+                                    src={require("assets/img/architecture.jpg")}
+                                    >
+                                </img>
+                            </Col>
+                        </Row>
+                    </Container>
+                    <Container style={{marginTop: "40px"}}>
+                        <Row>
+                            <Col className="ml-auto mr-auto text-center" md="8">
+                                <h2 className="title">Model Architecture</h2>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="ml-auto mr-auto text-center" md="8">
+                                <img
+                                    alt="..."
+                                    className="img-fluid img-raised"
+                                    src={require("assets/img/model_architecture.jpg")}
+                                    >
+                                </img>
+                            </Col>
                         </Row>
                     </Container>
                     <Container style={{marginTop: "40px"}}>
@@ -131,6 +148,9 @@ class Model extends React.Component {
                                 <CardText className="text-justify">
                                     Using a simple, bag of words Naive Bayes model, we reach a 90.4% accuracy in evaluating our test dataset. This is the functional baseline we were interested in improving upon.
                                 </CardText>
+                                <CardText className="text-justify">
+                                    While fact-checking is not a new problem within NLP, the COVID-19 domain represents a unique set of challenges and thus does not have any state-of-the-art baselines for us to compare.
+                                </CardText>
                                 </CardBody>
                             </Card>
                             <Card>
@@ -140,7 +160,7 @@ class Model extends React.Component {
                                     Card subtitle
                                 </CardSubtitle> */}
                                 <CardText className="text-justify">
-                                    Below is the confusion matrix from our final model. Our accuracy reached 96%, passing the Naive Bayes model by around 6%.
+                                    Below is the confusion matrix from our final model evaluating our hold-out testing set. Our accuracy reached 96%, passing the Naive Bayes model by around 6%.
                                 </CardText>
                                 <img
                                     alt="..."
@@ -150,7 +170,20 @@ class Model extends React.Component {
                                     >
                                 </img>
                                 <CardText className="text-justify">
-                                    Because our dataset is so imbalanced, we weren't that interested in our accuracy score. We spent more time focusing on the F1 score. 
+                                    Because our dataset is so imbalanced, we weren't as interested in our accuracy score. We spent more time focusing on the F1 score, as we felt this better captured our attempts to evaluate truthful claims in particular. The Precision-Recall curve below shows the tradeoff we saw between true positive rate and the positive predictive value. 
+                                </CardText>
+                                <img
+                                    alt="..."
+                                    className="img-fluid img-raised"
+                                    style={{margin: "20px"}}
+                                    src={require("assets/img/roc_curve.png")}
+                                    >
+                                </img>
+                                <CardText className="text-justify">
+                                    While we felt our evaluation scores were relatively proficient within our testing set, we see that our training dataset is not always representative for the types of claims users are interested in searching on. We believe we have further work to do to better generalize our model findings to various user inputs.
+                                </CardText>
+                                <CardText className="text-justify">
+                                    We additionally recognize that not every claim is true or false, and labels like 'partly-true' are much more applicable for many user claims. In further work we would like to be more specific in our claim label classification to include more of the gray-areas that are present in many of these virus claims.
                                 </CardText>
                                 </CardBody>
                             </Card>
