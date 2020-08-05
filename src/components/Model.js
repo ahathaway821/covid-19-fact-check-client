@@ -101,7 +101,7 @@ class Model extends React.Component {
                             </Col>
                         </Row>
                         <Row>
-                            <Col className="ml-auto mr-auto text-center" md="8">
+                            <Col className="ml-auto mr-auto text-center" md="10">
                                 <img
                                     alt="..."
                                     className="img-fluid img-raised"
@@ -118,7 +118,7 @@ class Model extends React.Component {
                             </Col>
                         </Row>
                         <Row>
-                            <Col className="ml-auto mr-auto text-center" md="8">
+                            <Col className="ml-auto mr-auto text-center" md="12">
                                 <img
                                     alt="..."
                                     className="img-fluid img-raised"
