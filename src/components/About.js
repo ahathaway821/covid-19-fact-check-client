@@ -129,7 +129,7 @@ class About extends React.Component {
                                                 <h4 className="title" style={{paddingTop: "35px"}}>Xander Hathaway</h4>
                                                 <p className="category text-info" >Solution Architect</p>
                                                 <p className="text-justify" style={{height: "265px"}}>
-                                                Xander works as a Solution Architect with Slalom Build where he works with companies from a variety of different industries to design and engineer custom, enterprise software solutions built upon the latest cloud architectures and modern web frameworks. {" "}
+                                                Xander works as a Solution Architect with Slalom Build where he helps companies from a variety of different industries to design and engineer enterprise software solutions built upon the latest cloud architectures and modern web frameworks. {" "}
                                                 </p>
                                                 <Button
                                                     className="btn-icon btn-round"
